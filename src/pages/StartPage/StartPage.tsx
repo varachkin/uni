@@ -16,22 +16,6 @@ interface StartPageProps {
     children?: ReactNode;
 }
 
-const enterFullscreen = () => {
-    const element = document.documentElement; // Fullscreen for the entire page
-    if(element){
-        if (element.requestFullscreen) {
-            element.requestFullscreen();
-          } else if (element.requestFullscreen) {
-            element.requestFullscreen();
-          } else if (element.requestFullscreen) {
-            element.requestFullscreen();
-          } else if (element.requestFullscreen) {
-            element.requestFullscreen();
-          }
-    }
-    
-  };
-
 export const StartPage = ({ children }: StartPageProps): JSX.Element => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -47,7 +31,7 @@ export const StartPage = ({ children }: StartPageProps): JSX.Element => {
 
     const handleNavigateToHome = (event: React.MouseEvent | React.TouchEvent) => {
         event.stopPropagation();
-        enterFullscreen();
+   
         navigate("/home");
     };
 
@@ -75,6 +59,7 @@ export const StartPage = ({ children }: StartPageProps): JSX.Element => {
         }
 
     }, [serial])
+    
 
     return !serial ? (
         <Loader size={30} />
