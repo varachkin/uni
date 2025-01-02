@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+  
+  pm01_client:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: pm01_client
+    ports:
+      - "5000:5000"
+    environment:
+      - SERVER_PORT=5000
+
+ 

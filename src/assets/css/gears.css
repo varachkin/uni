@@ -1,0 +1,148 @@
+#wrapper-gears {
+    width: 100%;
+    box-sizing: border-box;
+
+    /*padding: 5vw;*/
+    transform: scale(4);
+    opacity: 0.9;
+}
+
+.gears {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.gears-container {
+    width: 150px;
+    min-height: 10vh;
+    font-size: 0.725em;
+    position: relative;
+    margin: 0px auto;
+}
+
+.gear-rotate {
+    width: 2em;
+    height: 2em;
+    top: 33%;
+    left: 51%;
+    background: var(--third-color);
+    position: absolute;
+    border-radius: 1em;
+    -webkit-animation: 5s gear-rotate linear infinite;
+    -moz-animation: 5s gear-rotate linear infinite;
+    animation: 5s gear-rotate linear infinite;
+}
+
+.gear-rotate-left {
+    top: 53%;
+    left: 13%;
+    width: 2em;
+    height: 2em;
+    background: var(--third-color);
+    position: absolute;
+    border-radius: 1em;
+    -webkit-animation: 5s gear-rotate-left linear infinite;
+    -moz-animation: 5s gear-rotate-left linear infinite;
+    animation: 5s gear-rotate-left linear infinite;
+}
+
+.gear-rotate::before,
+.gear-rotate-left::before {
+    width: 2.8em;
+    height: 2.8em;
+    background:
+        -webkit-linear-gradient(0deg, transparent 39%, var(--third-color) 39%, var(--third-color) 61%, transparent 61%),
+        -webkit-linear-gradient(60deg, transparent 42%, var(--third-color) 42%, var(--third-color) 58%, transparent 58%),
+        -webkit-linear-gradient(120deg, transparent 42%, var(--third-color) 42%, var(--third-color) 58%, transparent 58%);
+    background:
+        -moz-linear-gradient(0deg, transparent 39%, var(--third-color) 39%, #3b3b3b 61%, transparent 61%),
+        -moz-linear-gradient(60deg, transparent 42%, var(--third-color) 42%, var(--third-color) 58%, transparent 58%),
+        -moz-linear-gradient(120deg, transparent 42%, var(--third-color) 42%, var(--third-color) 58%, transparent 58%);
+    background:
+        -o-linear-gradient(0deg, transparent 39%, var(--third-color) 39%, var(--third-color) 61%, transparent 61%),
+        -o-linear-gradient(60deg, transparent 42%, var(--third-color) 42%, var(--third-color) 58%, transparent 58%),
+        -o-linear-gradient(120deg, transparent 42%, #3b3b3b 42%, var(--third-color) 58%, transparent 58%);
+    background: -ms-linear-gradient(0deg, transparent 39%, var(--third-color) 39%, var(--third-color) 61%, transparent 61%), -ms-linear-gradient(60deg, transparent 42%, var(--third-color) 42%, var(--third-color) 58%, transparent 58%), -ms-linear-gradient(120deg, transparent 42%, var(--third-color) 42%, var(--third-color) 58%, transparent 58%);
+    background:
+        linear-gradient(0deg, transparent 39%, var(--third-color) 39%, var(--third-color) 61%, transparent 61%),
+        linear-gradient(60deg, transparent 42%, var(--third-color) 42%, var(--third-color) 58%, transparent 58%),
+        linear-gradient(120deg, transparent 42%, var(--third-color) 42%, var(--third-color) 58%, transparent 58%);
+    position: absolute;
+    content: "";
+    top: -.4em;
+    left: -.4em;
+    border-radius: 1.4em;
+}
+
+.gear-rotate::after,
+.gear-rotate-left::after {
+    width: 1em;
+    height: 1em;
+    background: var(--default-gradient-radial);
+    position: absolute;
+    content: "";
+    top: .5em;
+    left: .5em;
+    border-radius: .5em;
+}
+
+@-webkit-keyframes gear-rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}
+
+@-moz-keyframes gear-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes gear-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@-webkit-keyframes gear-rotate-left {
+    0% {
+        -webkit-transform: rotate(30deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(210deg);
+    }
+}
+
+@-moz-keyframes gear-rotate-left {
+    0% {
+        -webkit-transform: rotate(30deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(390deg);
+    }
+}
+
+@keyframes gear-rotate-left {
+    0% {
+        -webkit-transform: rotate(30deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(390deg);
+    }
+}

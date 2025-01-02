@@ -1,0 +1,308 @@
+@keyframes fadeIn {
+    0% {
+        background: rgba(0, 0, 0, .8);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        background: rgba(0, 0, 0, .8);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        background: rgba(0, 0, 0, .8);
+    }
+
+    100% {
+        background: rgba(0, 0, 0, .8);
+        opacity: 0.4;
+    }
+}
+
+@keyframes modalContentFadeIn {
+    0% {
+        opacity: 0.4;
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes modalContentFadeOut {
+    0% {
+        opacity: 0.2;
+        transform: translate3D(5%, -25%, 200px) perspective(50px);
+        bottom: -5vh;
+        right: -5vw;
+    }
+
+    55% {
+        opacity: 0.1;
+        bottom: -30vh;
+        right: -30vw;
+    }
+
+    100% {
+        transform: scale(0.1);
+        opacity: 0.02;
+        bottom: -30vh;
+        right: -30vw;
+    }
+}
+
+:root {
+    --d: 700ms;
+    --angle: 90deg;
+    --gradX: 100%;
+    --gradY: 50%;
+    --c1: rgb(255, 255, 255);
+    --c2: rgba(139, 139, 139, 0.1);
+}
+
+.modal-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0);
+    animation: fadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.modal-content-wrapper:nth-child(2) {
+    border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+    animation: borderRadial var(--d) linear infinite forwards;
+}
+
+.modal-content {
+    opacity: 0;
+    position: absolute;
+    animation: modalContentFadeIn 0.15s 0.1s cubic-bezier(.25, .75, .5, 1.25) forwards;
+    min-height: 25%;
+    background-color: #e7e7e7;
+    font-size: 1.75rem;
+    width: 85%;
+    padding: 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-container.hide-modal {
+    animation: fadeOut 1.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+.hide-modal .modal-content {
+    opacity: 1;
+    position: fixed;
+    animation: modalContentFadeOut 1s alternate forwards cubic-bezier(0.165, 0.240, 0.240, 1.000);
+}
+
+.btn-modal-close {
+    position: absolute;
+    top: 2vw;
+    right: 2vw;
+    z-index: 10;
+    font-size: 7vw;
+    color: var(--main-color);
+}
+
+.modal-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    gap: 2.25vw;
+    flex: 1;
+}
+
+.modal-card-img-block {
+    flex: 6;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.modal-card-description-block {
+    width: 100%;
+    margin: 1vw 0;
+}
+
+.modal-card-description-wrapper {
+    padding: 2vw;
+    border: 0.25vw solid rgba(128, 128, 128, 0.514);
+    border-radius: 1.5vw;
+    max-height: 25vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.modal-card-title {
+    text-align: start;
+    width: 100%;
+    font-size: 6vw;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.modal-card-description {
+    opacity: 0.6;
+    font-weight: 600;
+    font-size: 3.25vw;
+    line-height: 3.5vw;
+}
+
+.modal-card-subtitle {
+    text-align: start;
+    width: 100%;
+    font-size: 7vw;
+    font-weight: 600;
+    opacity: 0.5;
+    line-height: 8vw;
+}
+
+.modal-card-description-nutritional {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.nutritional-section {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.384);
+    padding: 0.5rem;
+}
+
+.nutritional-section>div {
+    flex: 1;
+}
+
+.nutritional-section>div:last-child {
+    text-align: end;
+}
+
+.nutritional-row>div>div:last-child {
+    text-align: end;
+}
+
+.nutritional-section div:first-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.384);
+}
+
+.modal-card-price-block {
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw;
+    font-size: 7vw;
+    font-family: Russo, san-serif;
+    font-weight: 400;
+    letter-spacing: 0.2vw;
+}
+
+.modal-card-price-block-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal-card-price-block .current-price {
+    font-size: 5.5vw;
+}
+
+.modal-card-price-block .old-price {
+    display: flex;
+    align-items: center;
+    opacity: 0.4;
+    font-size: 4.75vw;
+    text-decoration: line-through;
+}
+
+.modal-card-additional-info {
+    font-size: 2.75vw;
+    padding: 1vw;
+}
+
+.modal-card-control-block .card-control-panel {
+    font-weight: 700;
+    font-size: 5.5vw;
+    padding: 2vw 3vw;
+    margin: 1vw 0;
+}
+
+.modal-card-control-block {
+    flex: 1;
+    width: 100%;
+}
+
+.card-control-panel-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10vw;
+    font-size: 6vw
+}
+
+.card-control-panel-wrapper button {
+    padding: 2vw 3vw;
+    background: none;
+    background: var(--button-background);
+    color: black;
+    box-shadow: none;
+}
+
+.modal-card-control-block button {
+    flex: 1;
+    justify-content: center;
+    font-size: 5.5vw;
+}
+
+.card-control-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.65vw solid rgba(73, 73, 73, 0.164);
+    border-radius: 2vw;
+    flex: 1;
+    font-weight: 700;
+}
+
+.card-control-panel span {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cart-card-control-panel {
+    font-size: 4vw;
+    margin: 0.5vw 0;
+    font-weight: 400;
+    border: 0.5vw solid #494949be;
+    border-radius: 3vw;
+}

@@ -1,0 +1,58 @@
+.error-page-wrapper{
+    font-family: Poppins, sans-serif;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    padding: 2vw;
+    gap: 5vh;
+    color: white;
+    font-size: 3vw;
+    font-weight: 100;
+    background-color: rgba(86, 23, 0, 0.69);  
+}
+
+.error-page-img-wrapper{
+    text-align: center;
+}
+
+.error-page-wrapper .error-page-title{
+    font-size: 6vw;
+    line-height: 7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vw;
+    text-align: center;
+}
+
+.error-page-wrapper .error-page-subtitle{
+    font-size: 4.5vw;
+    line-height: 5vw;
+    padding: 5vw;
+}
+
+.error-page-wrapper .error-page-description{
+    font-size: 2.25vw;
+    line-height: 3vw;
+    box-sizing: border-box;
+    padding: 5vw;
+}
+
+.error-page-wrapper .error-page-button{
+    font-size: 4vw;
+    line-height: 6vw;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25vw 3.5vw;
+    border-radius: 1.25vw;
+}

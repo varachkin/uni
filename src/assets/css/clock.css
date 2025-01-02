@@ -1,0 +1,143 @@
+.clock {
+    position: relative;
+    height: 30vw;
+    width: 30vw;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 100%;
+    border: 1.5vw solid #606161;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 5rem auto;
+    transform: scale(2);
+  }
+  
+  .clock .top {
+    position: absolute;
+    width: 0.25vw;
+    height: 2vw;
+    background: #262626;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  
+  .clock .right {
+    position: absolute;
+    width: 2vw;
+    height: 0.25vw;
+    background: #262626;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto 0;
+  }
+  
+  .clock .bottom {
+    position: absolute;
+    width: 0.25vw;
+    height: 2vw;
+    background: #262626;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+  }
+  
+  .clock .left {
+    position: absolute;
+    width: 2vw;
+    height: 0.25vw;
+    background: #262626;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+  }
+  
+  .clock .center {
+    height: 1vw;
+    width: 1vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #262626;
+    border-radius: 100%;
+  }
+  
+  .clock .shadow {
+    height: 30vw;
+    width: 30vw;
+    position: absolute;
+    left:9.25vw;
+    top: 9.25vw;
+    transform: rotate(135deg);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+  }
+  
+  .clock .hour {
+    width: 0.75vw;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 20s infinite linear;
+  }
+  
+  .clock .hour:before {
+    position: absolute;
+    content: "";
+    background: #262626;
+    height: 6.85vw;
+    width: 0.5vw;
+    top:5.75vw;
+  }
+  
+  .clock .minute {
+    width: 0.5vw;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 10s infinite linear;
+  }
+  
+  .clock .minute:before {
+    position: absolute;
+    content: "";
+    background: #262626;
+    height: 11vw;
+    width: 0.25vw;
+    top: 1.5vw;
+  }
+  
+  .clock .second {
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 5s infinite linear;
+  }
+  
+  .clock .second:before {
+    position: absolute;
+    content: "";
+    background: #fd1111;
+    height: 12vw;
+    width: 0.25vw;
+    top: 0.5vw;
+  }
+  
+  @keyframes time {
+    to {
+      transform: rotate(360deg);
+    }
+  }

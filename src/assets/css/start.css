@@ -1,0 +1,169 @@
+@keyframes rippleStart {
+    0% {
+        opacity: 0;
+        transform: scale(-1);
+        border: 0.25vw solid var(--secondary-color);
+        visibility: visible;
+    }
+
+    10% {
+        transform: scale(0);
+        visibility: visible;
+    }
+
+    25% {
+        transform: scale(1.5);
+        opacity: 0.2;
+        border: 0.75vw solid var(--secondary-color);
+    }
+
+    50% {
+        transform: scale(3);
+        opacity: 0.0022;
+        border: 1vw solid var(--secondary-color);
+    }
+
+    75% {
+        transform: scale(4);
+        opacity: 0.004;
+    }
+
+    100% {
+        transform: scale(4.75);
+        opacity: 0.0001;
+    }
+}
+
+@keyframes finger-tap {
+    0% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1) scale(1.125);
+    }
+
+    4% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, -0.003, 1, 0, 1, 0, 0, 0, 0, 1) scale(0.77);
+    }
+
+    8% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1) scale(1.1);
+    }
+
+    100% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1) scale(1.125);
+    }
+}
+
+.start-page-wrapper {
+    height: 92vh;
+}
+
+.start-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    color: var(--secondary-color);
+    font-size: 4rem;
+}
+
+.start-page-logo {
+    width: 80%;
+    height: 15%;
+    background-image: var(--logo-start-screen);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.start-page-logo-label {
+    height: 5rem;
+    width: 30vw;
+    position: absolute;
+    bottom: -2rem;
+    right: 0;
+    font-size: 1.35rem;
+    font-family: Russo, sans-serif;
+    text-align: end;
+
+}
+
+.start-page-logo-label span {
+    padding: 0 1rem;
+}
+
+.start-page-logo-label .header-logo-block {
+    width: 30vw;
+}
+
+.start-page-logo-label .header-logo-block .header-logo {
+    background-image: var(--logo-header);
+}
+
+.start-page-icon {
+    color: var(--secondary-color);
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.start-page-icon svg {
+    position: relative;
+    z-index: 4;
+}
+
+.start-page-icon .waves {
+    z-index: 2;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.waves {
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.start-page-icon .waves:before,
+.start-page-icon .waves:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 50vw;
+    aspect-ratio: 1/1;
+    border: 3vw solid var(--secondary-color);
+    border-radius: 50%;
+    transform: scale(-1);
+    visibility: hidden;
+}
+
+
+.start-page-icon .waves:before {
+    opacity: 0;
+    animation: rippleStart 4s linear infinite;
+}
+
+.start-page-icon .waves:after {
+    opacity: 0;
+    animation: rippleStart 4s linear .28s infinite;
+}
+
+.waves .finger-icon {
+    position: relative;
+    height: 30vw;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+    background-image: url('./../img/finger.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex: 0;
+    opacity: 0.7;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1);
+    animation: finger-tap 4s linear .32s infinite;
+}

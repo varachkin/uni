@@ -1,0 +1,53 @@
+.payment-method-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 84vh;
+}
+
+.payment-method-wrapper-list {
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3vw;
+    gap: 3vh;
+    flex: 1;
+}
+
+.payment-method-wrapper {
+    width: 65vw;
+    min-height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.199);
+    border-radius: 10vh;
+    border: 3px solid rgba(0, 0, 0, 0.13);
+    box-shadow: 8px 8px 24px -11px rgba(66, 68, 90, 1);
+}
+
+.payment-method-wrapper .service-page-subtitle {
+    color: white;
+    margin: 0;
+    text-align: start;
+    width: 100%;
+    flex: 1;
+}
+
+.payment-method-block {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50%;
+    border-radius: 50%;
+}
+
+.payment-method-block img {
+    width: 90%;
+}

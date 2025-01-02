@@ -1,0 +1,28 @@
+:root {
+    --background: linear-gradient(45deg, #131313 55%, #49470e 77%, #232900 90%);
+    --background-main: url(/src/assets/img/bg-exa-img.jpeg);
+    --background-service: radial-gradient(circle at 113%, rgb(255 255 255) 30%, #fffefbed 66%, #6397f8 71%, rgb(255, 255, 255) 106%);
+    --background-extra: none;
+    --button-background: radial-gradient(circle at 10% 10%, #ffbd30, #d39000);
+    --waiting-gradient: linear-gradient(45deg, #331a05, #ff9253, #331605);
+    --warning-gradient: linear-gradient(45deg, #331a05,#ff9253, #331605);
+    --success-gradient: linear-gradient(45deg, #053318,#0a8328, #053314);
+    --error-gradient: linear-gradient(45deg, #1f0f0f, #941010, #330505);
+    --default-gradient: linear-gradient(45deg, #010a2e, #0c1647, #183a84, #020241);
+    --default-gradient-radial: radial-gradient(#1b2e75, #102754, #0e2558 150%);
+    --radial-card-bg-error: linear-gradient(to right, #870000bb, #1f0909b9);
+    --card-bg-opacity-white: #c9c9c9a2;
+    --card-shadow: inset -10px -10px 15px rgba(70, 70, 70, 0.12), inset 10px 10px 15px rgba(255, 255, 255, 0.5);
+    --main-color: #131313;
+    --bullet-color: #575757bb;
+    --secondary-color: #e0e0e0;
+    --success-button-bgcolor: radial-gradient(#1dd44b, #0a8328);
+    --service-button-bgcolor: radial-gradient(circle farthest-corner at 22.4% 21.7%, rgba(4, 189, 228, 1) 15%, rgba(2, 83, 185, 1) 100.2%);
+    --third-color: #d39000;
+    --third-color-opacity: #b8934527;
+    --logo-start-screen: url(/src/assets/img/vendinity-logo-white.png);
+    --logo-header: url(/src/assets/img/logo-exa-white-small.png);
+    --logo-full: url(/src/assets/img/exa-logo-white.png);
+    --logo-full-black: url(/src/assets/img/exa-logo-black.png);
+    --service-background-extra: url(/src/assets/img/service-background.webp);
+}

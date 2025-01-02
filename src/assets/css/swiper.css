@@ -1,0 +1,308 @@
+.swiper.swiper-cube {
+    width: 100%;
+    height: 95%;
+}
+.swiper-cube .swiper-cube-shadow:before{
+    background: var(--third-color-opacity);
+}
+
+.swiper-wrapper {
+    margin: 0 auto;
+}
+
+.swiper-icon {
+    font-size: 2.5rem;
+}
+
+.swiper-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+    color: #1B42A6;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.swiper-slide {
+    width: 95%;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.swiper-pagination-bullet {
+    transform: scale(1);
+    padding: 1.5vw;
+    border-radius: 50%;
+    margin: 1vw 1vw !important;
+    background: radial-gradient(circle at 50% 50%, #cfcfcf59 30%, var(--bullet-color)) !important;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    position: relative;
+    transform: scale(1.15);
+    background: radial-gradient(circle at 10% 10%, #7a7a7a00, var(--main-color));
+    background: var(--background);
+    opacity: 0.9;
+    border-radius: 50%;
+}
+
+.swiper-pagination-bullet-active::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 0.075vw;
+    left: 0.075vw;
+    padding: 1.5vw;
+    transform: scale(1.25);
+    background: var(--button-background);
+    z-index: 999;
+}
+
+.swiper-card-wrapper {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    color:white;
+    padding: 2vw;
+    background: #242c3940;
+    margin: 2vw;
+    border-radius: 1.5vw;
+    gap: 1vw;
+    position: relative;
+    min-width: 40%;
+    flex: 1;
+    min-height: 47%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset -16px -1px 49px rgba(255, 255, 255, 0.27), inset 7px 11px 12px rgba(150, 150, 150, 0.1);
+}
+.swiper-card-wrapper .card-box-number.exist{
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    height: 7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vw;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: #189a1d;
+    z-index: 2;
+}
+
+.swiper-card-wrapper.single {
+    width: 100%;
+    min-height: 95%;
+    font-size: 3.75rem;
+}
+
+.swiper-card-wrapper.double {
+    width: 95%;
+    min-height: 37%;
+}
+
+.swiper-card-wrapper.single .swiper-card-name{
+    font-size: 6vw;
+}
+
+.swiper-card-wrapper.double .swiper-card-name{
+    font-size: 3.75vw;
+}
+
+.swiper-card-wrapper.single .swiper-card-description{
+    font-size: 6.75vw;
+}
+
+.swiper-card-wrapper.double .swiper-card-description{
+    font-size: 4.5vw;
+}
+
+.swiper-card-wrapper.single .swiper-card-price-block .current-price{
+    font-size: 7vw;
+    padding: 0 1.5vw;
+}
+
+.swiper-card-wrapper.double .swiper-card-price-block .current-price{
+    font-size: 5vw;
+}
+
+.swiper-card-wrapper.double .swiper-card-img-block,
+.swiper-card-wrapper.single .swiper-card-img-block {
+    background-size: contain;
+}
+
+.swiper-card-wrapper.single .not-available-label{
+    font-size: 10vw;
+}
+.swiper-card-wrapper.disabled {
+    position: relative;
+    outline: 3px solid #c75e5ebb;
+    filter: grayscale(80%);
+    opacity: 0.5;
+    box-shadow: 
+    -10px -10px 15px rgba(70, 70, 70, 0.12),
+    10px 10px 15px var(--radial-card-bg-error);
+}
+
+.swiper-card-wrapper.disabled:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 
+    -10px -10px 15px rgba(70, 70, 70, 0.12),
+    10px 10px 15px var(--radial-card-bg-error);
+}
+
+.swiper-card-img-block {
+    height: 68%;
+    position: relative;
+    top: -2%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: auto 68%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-15px);
+    background-color: rgba(255,255,255,0.1);
+    width:130%;
+}
+
+.swiper-card-img-block > div{
+    margin: 10%;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.swiper-card-img-block img{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.not-available-label{
+    position: absolute;
+    width: 105%;
+    bottom: 0;
+    padding: 3.5vw;
+    z-index: 9;
+    background: var(--error-gradient);
+    color: white;
+    font-size: 4.5vw;
+    opacity: 1;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+.description {
+    font-size: 1.25rem;
+}
+
+.swiper-card-description-block {
+    flex: 2;
+    gap: 2vw;
+    width: 100%;
+    padding: 2vw 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color:white !important;
+}
+
+.swiper-card-name {
+    font-size: 3.05vw;
+}
+
+.swiper-card-description {
+    font-weight: 400;
+    color:#cac24b;
+    font-size: 3.25vw;
+}
+
+.swiper-card-price-block {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw;
+    font-family: Russo, san-serif;
+    font-weight: 400;
+}
+
+.swiper-card-price-block .current-price {
+    color:white !important;
+    font-size: 3.75vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swiper-card-price-block .old-price {
+    margin-left: 10px;
+    opacity: 0.4;
+    text-decoration: line-through;
+}
+
+.swiper-cube {
+    width: 100vw;
+    min-height: 75vh;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 9;
+}
+
+.swiper-cube .swiper-slide {
+    height: 100%;
+    width: 100% !important;
+    padding: 0 2vw;
+    gap: 1vh;
+    backface-visibility: hidden;
+    position: relative;
+}
+
+.swiper-cube .swiper-slide.single {
+    height: 100%;
+    backface-visibility: hidden;
+    position: relative;
+    justify-content: center;
+}
+
+.swiper-cube .swiper-slide.double {
+    height: 100%;
+    backface-visibility: hidden;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.swiper-cube .swiper-slide-active {
+    z-index: 999;
+}
+
+.swiper-pagination {
+    bottom: -5.5% !important;
+    padding: 0 3vw;
+}
+
+@media (max-width: 1080px) {
+    .swiper.swiper-cube{
+        height: 93%;
+    }
+  }
+

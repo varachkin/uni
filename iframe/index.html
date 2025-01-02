@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALAN</title>
+    <style type="text/css">
+      .wrapper-body{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: hidden;
+        overflow-x: hidden;
+      }
+
+      .wrapper-body::-webkit-scrollbar {
+        display: none;
+      }
+
+      iframe {
+        position: absolute;
+        transform: rotate(-90deg);
+        transform-origin: bottom left;
+        width: 100vh;
+        height: 100vw;
+        object-fit: cover;
+        bottom: 0;
+        left: 100vw;
+        visibility: visible;
+        border: none;
+      }
+
+      /* iframe {
+        position: absolute;
+        transform: rotate(90deg);
+        transform-origin: top right;
+        width: 100vh;
+        height: 100vw;
+        object-fit: cover;
+        top: 100vh;
+        right: 0;
+        visibility: visible;
+        border: none;
+      } */
+    </style>
+  </head>
+  <body class="wrapper-body">
+    <iframe src="http://localhost:5000"></iframe>
+  </body>
+</html>

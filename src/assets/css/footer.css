@@ -1,0 +1,59 @@
+.footer {
+    position: absolute;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2vw;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 4.5vw;
+    padding: 2vw;
+}
+
+.footer-home-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    width: 15vw;
+    aspect-ratio: 1/1;
+    margin: 0.75rem;
+    color: var(--secondary-color);
+    background-color: #50A3AF;
+    border-radius: 50%;
+    box-shadow: inset -25px -25px 30px rgba(0, 0, 0, 0.329);
+    background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 220, .2) 0%, transparent 100%);
+    background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 220, .2) 0%, transparent 100%);
+    background-image: -o-linear-gradient(-45deg, rgba(255, 255, 220, .2) 0%, transparent 100%);
+    background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 220, .2) 0%, transparent 100%);
+}
+
+.footer-info-block {
+    margin: 1vw;
+    flex: 5;
+}
+
+.footer-info-block-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    width: 95%;
+    justify-content: space-between;
+    color: var(--secondary-color);
+    font-size: 4.5vw;
+}
+
+.footer-info-block-row div:first-child {
+    font-weight: 400;
+    font-size: 3.75vw;
+}
+
+.footer-info-block-row div:last-child {
+    font-weight: 400;
+}
+
+.footer-cart-block {
+    flex: 1;
+}

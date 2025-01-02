@@ -1,0 +1,109 @@
+@keyframes showTopText {
+    0% { transform: translate3d(0, 300%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+@keyframes showBottomText {
+    0% { transform: translate3d(0, -300%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+.animated-title-wrapper{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: Russo, sans-serif;
+    overflow: hidden;
+}
+
+.animated-title-wrapper-autoheight{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.animated-title {
+    font-size: 5.75vw;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2vh;
+}
+
+.animated-title-footer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.animated-title > .text-top, .animated-title > .text-bottom {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.text-top{
+    justify-content: center;
+    align-items: top;
+}
+
+.text-bottom{
+    justify-content: center;
+    align-items: bottom;
+}
+.animated-title{
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.animated-title svg {
+    transform: scale(5);
+    height: 12vh;
+}
+
+.animated-title .button svg {
+    height: inherit;
+    font-size: inherit;
+    width: inherit;
+    transform: scale(1.3);
+}
+
+.animated-title > div div span {
+    display: block;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.animated-title > div.text-top {
+    top: 0;
+    width: 100%;
+}
+
+.animated-title > div.text-top div {
+    animation: showTopText 1s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    bottom: 0;
+    transform: translate(0, 300%);
+}
+
+.animated-title > div.text-top div span:first-child {
+    color: #767676;
+}
+
+.animated-title > div.text-bottom {
+    bottom: 0;
+}
+
+.animated-title > div.text-bottom div {
+    animation: showBottomText 0.5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    top: 0;
+    transform: translate(0, -300%);
+}

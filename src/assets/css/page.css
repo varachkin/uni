@@ -1,0 +1,248 @@
+.page {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-image: var(--background-main);
+    background-size: cover;
+}
+
+.page:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: var(--background-extra);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+.title {
+    text-align: center;
+    width: 100%;
+    font-size: 6vw;
+    font-weight: 700;
+    padding: 4vw 3vw;
+    font-family: Russo, san-serif;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    color: var(--secondary-color)
+}
+
+.subtitle {
+    width: 85%;
+    font-size: 3.5vw;
+    text-align: center;
+    font-family: Russo, san-serif;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    padding: 3vw;
+    color: var(--secondary-color)
+}
+
+
+
+.service-page-waiting-wrapper {
+    height: 100%;
+    position: relative;
+    background: var(--waiting-gradient);
+}
+
+.service-page-waiting-wrapper:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--service-background-extra);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: show 1.5s ease-in forwards;
+}
+
+.service-page-wrapper:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--service-background-extra);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: show 1.5s ease-in forwards;
+}
+
+
+
+.warning-page-wrapper {
+    height: 100%;
+    background: var(--warning-gradient);
+}
+
+.success-page-wrapper {
+    height: 100%;
+}
+
+.service-page-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.service-page-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 92vh;
+    font-size: 2.25rem;
+    color: #dfdfdf;
+    gap: 1.5rem;
+}
+
+.service-page-container>.loader {
+    margin-top: 10rem;
+}
+
+.service-page-container-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 3rem;
+    text-align: center;
+}
+
+.service-page-img-block {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-page-img-block-employee {
+    height: 20vh;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-page-img-block-employee img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+.service-page-img-block img {
+    width: 100%;
+}
+
+.service-page-container>svg {
+    font-size: 27rem;
+}
+
+.service-page-title {
+    font-size: 4rem;
+    text-align: center;
+    margin: 2rem auto;
+    width: 85%;
+}
+
+.service-page-text-wrapper {
+    width: 100%;
+}
+
+.service-page-subtitle-wrapper {
+    width: 100%;
+}
+
+.service-page-subtitle-employee-wrapper {
+    justify-content: center;
+    text-align: center;
+}
+
+.service-page-subtitle-employee-loader-wrapper span {
+    margin: 0 auto;
+}
+
+.service-page-subtitle-wrapper .service-page-subtitle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service-page-subtitle {
+    max-width: 100%;
+    font-size: 4.5vw;
+    padding: 1vw 3.5vw;
+    text-align: center;
+    font-family: Russo, san-serif;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+}
+
+.service-page-modal-subtitle {
+    text-align: center;
+    margin: 1.25rem auto;
+    font-family: Russo, san-serif;
+    letter-spacing: 0.1rem;
+}
+
+h4.service-page-modal-subtitle {
+    width: 85%;
+    line-height: 4.5vw;
+    font-size: 4.5vw;
+    font-weight: 700;
+}
+
+h5.service-page-modal-subtitle {
+    line-height: 3.55vw;
+    font-size: 3.5vw;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.service-page-subtitle>span {
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    color: var(--third-color);
+}
+
+.service-page-footer {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 0 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}

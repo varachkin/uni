@@ -1,0 +1,139 @@
+:root {
+    --timer-value: 9s;
+}
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    font-size: 4.25vw;
+    font-weight: 300;
+    padding: 2vw 3.5vw;
+    margin: 1vw 0;
+    background: var(--button-background);
+    color: black;
+    border: none;
+    border-radius: 1.5vw;
+    box-shadow: 0px 30px 25px -18px rgba(5, 5, 5, 0.788);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw
+}
+
+.button.disabled {
+    background: linear-gradient(90deg, #777777, #272727);
+    color: #dfdfdf;
+    opacity: 0.4;
+    box-shadow: none;
+}
+
+.button.disabled:active {
+    box-shadow: none;
+}
+
+.button.light {
+    background: linear-gradient(90deg, #dfdfdf, #cecece);
+    color: var(--main-color);
+}
+
+.button:active {
+    transition: 0.2s;
+    box-shadow: 0px 18px 25px -18px rgba(5, 5, 5, 0.788);
+}
+
+.countdown-container {
+    position: relative;
+    width: 6.5vw;
+    height: 6.5vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --progress: 100%;
+}
+
+.countdown-container::before {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    z-index: 1;
+    background: linear-gradient(90deg, #dfdfdf, #dfdfdf);
+}
+
+.countdown {
+    position: relative;
+    z-index: 2;
+    font-size: 4vw;
+    font-weight: 600;
+    transition: transform 1s ease;
+}
+
+.button.success,
+.button.success svg circle,
+.button.success .countdown-container {
+    color: #229843;
+    background: conic-gradient(#229843 var(--progress, 0%), #dfdfdf 0%)
+}
+
+.button.default,
+.button.default svg circle,
+.button.default .countdown-container {
+    color: var(--main-color);
+    background: conic-gradient(var(--main-color) var(--progress, 0%), #dfdfdf 0%)
+}
+
+.button.error,
+.button.error svg circle,
+.button.error .countdown-container {
+    color: #CE3A31;
+    background: conic-gradient(#CE3A31 var(--progress, 0%), #dfdfdf 0%)
+}
+
+.button.warning svg circle,
+.button.warning .countdown-container {
+     color: #ff712f;
+    background: conic-gradient(#ff712f var(--progress, 0%), #dfdfdf 0%)
+}
+
+.button.warning svg{
+    color: #050505;
+}
+
+.button.warning{
+    color: #ff712f;
+    background-color: var(--button-background);
+}
+
+button.button.submit {
+    background: linear-gradient(90deg, #00a862, #0f8654);
+}
+
+button.button.cancel {
+    color: #bababa;
+    background: linear-gradient(90deg, rgb(88 6 6), rgb(170 22 22));
+}
+
+button.button.service {
+    background: var(--service-button-bgcolor);
+}
+
+.button-full-width {
+    width: 100%;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: space-around;
+    padding: 2vw;
+}
+
+.button-wrapper .button {
+    min-width: 25vw;
+}

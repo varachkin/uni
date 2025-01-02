@@ -1,0 +1,21 @@
+name: exa-cloud
+version: '3.4'
+services:
+  terminal:
+    image: wiremock/wiremock:latest
+    volumes:
+      - ./mappings:/home/wiremock/mappings
+      - ./__files:/home/wiremock/__files
+      - ./extensions:/var/wiremock/extensions
+    ports:
+      - 5001:8080
+    entrypoint: ["/docker-entrypoint.sh", "--global-response-templating", "--enable-stub-cors"]
+  qr:
+    image: wiremock/wiremock:latest
+    volumes:
+      - ./mappings:/home/wiremock/mappings
+      - ./__files:/home/wiremock/__files
+      - ./extensions:/var/wiremock/extensions
+    ports:
+      - 5002:8080
+    entrypoint: ["/docker-entrypoint.sh", "--global-response-templating", "--enable-stub-cors"]

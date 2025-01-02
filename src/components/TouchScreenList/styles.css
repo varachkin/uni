@@ -1,0 +1,49 @@
+#app { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #fff;
+}
+
+.swiper-touch {
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  color: #000;
+  /* max-height: 75%; */
+  z-index: 9999999 !important
+}
+
+.swiper-slide-touch {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: auto; /* Allow the slide to grow with its content */
+}
+
+#swiper-list .swiper-wrapper{
+  min-height: 100% !important;
+}
+#swiper-list.center .swiper-wrapper{
+  justify-content: center;
+}

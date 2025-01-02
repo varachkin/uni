@@ -1,0 +1,108 @@
+.list-wrapper {
+    position: relative;
+    z-index: 99999999999999;
+}
+
+.products-list {
+    width: 100% !important;
+    padding: 2vw;
+}
+
+.products-list h4 {
+    padding: 2vw;
+    color: white;
+}
+
+.status-product-list-row {
+    width: 100% !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    margin: 2vw 0;
+    max-height: 27vh;
+    color: white;
+    flex: 1;
+}
+
+.status-product-list-row .o-circle {
+    color: rgba(240, 248, 255, 0.767);
+    display: flex;
+    width: 4.75vw;
+    height: 4.75vw;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    animation: circle-appearance .8s ease-in-out 1 forwards, set-overflow .1s 1.1s forwards;
+    box-shadow: 3px 42px 57px -1px rgba(45, 45, 45, 1);
+    font-size: 4vw;
+}
+
+.status-product-list-row .c-container__circle {
+    margin: 0 3vw;
+    aspect-ratio: 1/1;
+}
+
+.status-product-list-row .c-container__circle .o-circle__sign::after,
+.status-product-list-row .c-container__circle .o-circle__sign::before {
+    display: none;
+}
+
+.status-product-list-row {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    align-items: center;
+}
+
+.status-product-list-row .o-circle {
+    position: relative;
+    z-index: 2;
+}
+
+.status-product-list-value {
+    display: inline-flex;
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 72vw;
+}
+
+.status-product-list-row .status-product-list-value span:first-child {
+    opacity: 0;
+    animation: slidein 4s;
+    animation-fill-mode: forwards;
+    font-size: 3vw;
+    overflow: hidden;
+    width: 100%;
+}
+
+.status-product-list-row .status-product-list-value span:last-child {
+    font-size: 3vw;
+    justify-content: flex-end;
+}
+
+@keyframes slidein {
+    0% {
+        margin-left: -800px;
+        opacity: 0
+    }
+
+    20% {
+        margin-left: -800px;
+        opacity: 0.2
+    }
+
+    35% {
+        margin-left: 0px;
+        opacity: 0.8
+    }
+
+    100% {
+        margin-left: 0px;
+        opacity: 1
+    }
+}
