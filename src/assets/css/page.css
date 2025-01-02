@@ -28,10 +28,10 @@
 .main {
     position: relative;
     z-index: 1;
-    height: 80vh;
+    height: 92vh;
     display: flex;
     flex-direction: column;
-    
+
 }
 
 .title {
