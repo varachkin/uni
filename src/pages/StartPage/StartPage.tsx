@@ -31,7 +31,6 @@ export const StartPage = ({ children }: StartPageProps): JSX.Element => {
 
     const handleNavigateToHome = (event: React.MouseEvent | React.TouchEvent) => {
         event.stopPropagation();
-   
         navigate("/home");
     };
 
@@ -59,7 +58,6 @@ export const StartPage = ({ children }: StartPageProps): JSX.Element => {
         }
 
     }, [serial])
-    
 
     return !serial ? (
         <Loader size={30} />

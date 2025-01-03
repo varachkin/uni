@@ -26,7 +26,9 @@ export function Wrapper({ children }: WrapperProps): JSX.Element {
                     {children}
                     {!(pathname.includes('service') || pathname === '/' || pathname === '/login' || pathname === '/settings' || pathname === '/cart') && <Footer />}
                 </main>
+
             </main>
+
         </>
 
     )

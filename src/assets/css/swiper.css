@@ -1,6 +1,7 @@
 .swiper.swiper-cube {
     width: 100%;
-    height: 95%;
+    flex: 1;
+    display: flex;
 }
 .swiper-cube .swiper-cube-shadow:before{
     background: var(--third-color-opacity);
@@ -299,10 +300,3 @@
     bottom: -5.5% !important;
     padding: 0 3vw;
 }
-
-@media (max-width: 1080px) {
-    .swiper.swiper-cube{
-        height: 93%;
-    }
-  }
-

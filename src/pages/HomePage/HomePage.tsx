@@ -97,7 +97,7 @@ export default function HomePage({ children }: HomePageProps): JSX.Element {
   }, [serial, dispatch]);
 
   return (
-    <IdleTimerProvider timeout={clientTimeoutIdle} onIdle={onIdle}>
+    // <IdleTimerProvider timeout={clientTimeoutIdle} onIdle={onIdle}>
       <>
         {children}
         <div className="home-container">
@@ -153,6 +153,6 @@ export default function HomePage({ children }: HomePageProps): JSX.Element {
           </Modal>
         )}
       </>
-    </IdleTimerProvider>
+    // </IdleTimerProvider>
   );
 }
