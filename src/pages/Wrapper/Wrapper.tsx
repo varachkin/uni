@@ -7,20 +7,18 @@ import Header from "../../components/Header/Header";
 import { DevPanel } from "../../components/DevPanel/DevPanel";
 import { Footer } from "../../components/Footer/Footer";
 
-
 interface WrapperProps {
     children: ReactNode;
 }
 
 export function Wrapper({ children }: WrapperProps): JSX.Element {
-    const { devMode } = useSelector((state: RootState) => state.configurationReducer)
+    const { devMode, isMobileDevice } = useSelector((state: RootState) => state.configurationReducer)
     const { pathname } = useLocation();
-
     return (
         <>
             {devMode && <DevPanel />}
             <SecretDevelopmentMode />
-            <main className="page">
+            <main className="page" style={{height: isMobileDevice ? '90vh' : '100vh'}}>
                 <main className="main">
                     {!pathname.includes('service') && <Header />}
                     {children}

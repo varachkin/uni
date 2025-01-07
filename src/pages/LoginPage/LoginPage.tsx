@@ -16,7 +16,7 @@ interface InputValue {
 export const LoginPage: React.FC = () => {
     const [inputValue, setInputValue] = useState<InputValue>({});
     const [isError, setIsError] = useState<boolean>(false);
-    const { language } = useSelector((state: RootState) => state.configurationReducer);
+    const { language, isMobileDevice } = useSelector((state: RootState) => state.configurationReducer);
     const navigate = useNavigate();
 
     const getValue = (input: Partial<InputValue>): void => {
@@ -52,6 +52,7 @@ export const LoginPage: React.FC = () => {
                                     placeholder="login"
                                     handleSubmit={handleGoToSettings}
                                     bottom={10}
+                                    isShow={!isMobileDevice}
                                 />
                                 <InputWithKeyboard
                                     type="password"
@@ -61,6 +62,7 @@ export const LoginPage: React.FC = () => {
                                     placeholder="password"
                                     handleSubmit={handleGoToSettings}
                                     bottom={10}
+                                    isShow={!isMobileDevice}
                                 />
                             </div>
                             {isError && <h3 className="error-subtitle">Nieprawidłowy login lub hasło</h3>}

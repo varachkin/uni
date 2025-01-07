@@ -6,10 +6,11 @@
 }
 
 .cart-page-list-wrapper {
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  flex: 1;
 }
 
 .cart-page-list {

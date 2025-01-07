@@ -2,10 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import { IactionGlobalStateConfigurationMachine } from "../../interfaces";
 
 const initialState: IactionGlobalStateConfigurationMachine = {
+  isMobileDevice: true,
   language: "pl",
   // serial: null,
   serial: 'EXA01-01-01',
-  hasCart: false,
+  hasCart: true,
   isCheckingTechBreak: false,
   technical_break: false,
   devMode: false,
@@ -34,6 +35,9 @@ export const configurationSlice = createSlice({
   name: "configuration",
   initialState: initialState,
   reducers: {
+    changeIsMobileDevice: (state) => {
+      state.isMobileDevice = !state.isMobileDevice;
+    },
     changeLanguage: (state, actions) => {
       state.language = actions.payload;
     },
@@ -90,6 +94,7 @@ export const configurationSlice = createSlice({
 });
 
 export const {
+  changeIsMobileDevice,
   changeLanguage,
   setSerialOfMachine,
   changeCartMode,

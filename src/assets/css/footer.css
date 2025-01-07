@@ -1,5 +1,5 @@
 .footer {
-    position: absolute;
+    /* position: absolute; */
     height: 8vh;
     display: flex;
     justify-content: space-between;
@@ -9,7 +9,7 @@
     left: 0;
     right: 0;
     font-size: 4.5vw;
-    padding: 4vw;
+    margin: 1vw 4vw;
 }
 
 .footer-home-btn{

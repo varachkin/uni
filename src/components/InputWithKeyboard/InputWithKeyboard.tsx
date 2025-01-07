@@ -19,6 +19,7 @@ interface InputWithKeyboardProps {
   isButton?: boolean;
   isButtonDisabled?: boolean;
   autoClear?: boolean;
+  isShow?: boolean;
 }
 
 interface InputState {
@@ -80,6 +81,7 @@ export const InputWithKeyboard: React.FC<InputWithKeyboardProps> = ({
   isButton = false,
   isButtonDisabled = false,
   autoClear = false,
+  isShow = true
 }) => {
   const [layoutName] = useState<string>("ip");
   const [layoutType, setLayoutType] = useState<keyof typeof customLayout>("text");
@@ -177,7 +179,7 @@ export const InputWithKeyboard: React.FC<InputWithKeyboardProps> = ({
 
   const setActiveInput = (name: string) => {
     setInputName(name);
-    setKeyboardOpen(true);
+    if(isShow) setKeyboardOpen(true);
   };
 
   const validateEmail = (email: string): boolean => {
