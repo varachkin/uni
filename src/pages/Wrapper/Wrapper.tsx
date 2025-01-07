@@ -27,10 +27,6 @@ export function Wrapper({ children }: WrapperProps): JSX.Element {
       // Enter fullscreen (standard API)
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
-      } else if (elem.webkitRequestFullscreen) {
-        elem.webkitRequestFullscreen(); // Safari
-      } else if (elem.msRequestFullscreen) {
-        elem.msRequestFullscreen(); // IE/Edge
       } else {
         // Fallback for iOS: simulate fullscreen via CSS
         setIsFullscreen(true);
