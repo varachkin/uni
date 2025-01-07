@@ -25,10 +25,6 @@ export function Wrapper({ children }: WrapperProps): JSX.Element {
     if (!document.fullscreenElement) {
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
-      } else if (elem.webkitRequestFullscreen) {
-        elem.webkitRequestFullscreen(); // Safari
-      } else if (elem.msRequestFullscreen) {
-        elem.msRequestFullscreen(); // IE/Edge
       }
     }
   };
