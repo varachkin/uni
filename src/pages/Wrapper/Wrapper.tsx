@@ -32,7 +32,7 @@ export function Wrapper({ children }: WrapperProps): JSX.Element {
       <div
         className="page"
         style={{
-          height: isMobileDevice ? "90vh" : "100vh",
+          // height: isMobileDevice ? "90vh" : "100vh",
           width: "100%",
           overflow: "hidden", // Prevent scrolling when simulating fullscreen
         }}
