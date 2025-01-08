@@ -15,7 +15,11 @@ export default function App(props : IAppProps) {
     if (screenfull.isEnabled) {
       screenfull.request();
     }
+  
+    // Ensure the app covers the entire viewport on load
+    window.scrollTo(0, 1);
   }, []);
+  
   
   
   
