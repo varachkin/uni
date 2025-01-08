@@ -3,21 +3,20 @@ import { Provider } from "react-redux";
 import { setupStore } from "./store/store";
 import { SnackbarProvider } from 'notistack';
 import { ReactNode, useEffect } from "react";
+import screenfull from 'screenfull';
 
 interface IAppProps {
   children: ReactNode;
 }
 
 export default function App(props : IAppProps) {
+  
   useEffect(() => {
-    if (document.documentElement.requestFullscreen) {
-      document.documentElement.requestFullscreen();
-    } else if (document.documentElement.webkitRequestFullscreen) { // Safari
-      document.documentElement.webkitRequestFullscreen();
-    } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-      document.documentElement.msRequestFullscreen();
+    if (screenfull.isEnabled) {
+      screenfull.request();
     }
   }, []);
+  
   
   
   const store = setupStore()
