@@ -12,7 +12,7 @@ interface WrapperProps {
 }
 
 export function Wrapper({ children }: WrapperProps): JSX.Element {
-  const { devMode, isMobileDevice } = useSelector(
+  const { devMode } = useSelector(
     (state: RootState) => state.configurationReducer
   );
   const { pathname } = useLocation();
