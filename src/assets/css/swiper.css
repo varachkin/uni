@@ -110,28 +110,28 @@
 }
 
 .swiper-card-wrapper.single .swiper-card-name{
-    font-size: 6vw;
+    font-size: 3.75vh;
 }
 
 .swiper-card-wrapper.double .swiper-card-name{
-    font-size: 3.75vw;
+    font-size: 2.25vh;
 }
 
 .swiper-card-wrapper.single .swiper-card-description{
-    font-size: 6.75vw;
+    font-size: 4vh;
 }
 
 .swiper-card-wrapper.double .swiper-card-description{
-    font-size: 4.5vw;
+    font-size: 2.5vh;
 }
 
 .swiper-card-wrapper.single .swiper-card-price-block .current-price{
-    font-size: 7vw;
-    padding: 0 1.5vw;
+    font-size: 4.25vh;
+    padding: 0 1vh;
 }
 
 .swiper-card-wrapper.double .swiper-card-price-block .current-price{
-    font-size: 5vw;
+    font-size: 2.75vh;
 }
 
 .swiper-card-wrapper.double .swiper-card-img-block,
@@ -140,7 +140,7 @@
 }
 
 .swiper-card-wrapper.single .not-available-label{
-    font-size: 10vw;
+    font-size: 5vh;
 }
 .swiper-card-wrapper.disabled {
     position: relative;
@@ -198,7 +198,7 @@
     position: absolute;
     width: 105%;
     bottom: 0;
-    padding: 3.5vw;
+    padding: 1.5vh;
     z-index: 9;
     background: var(--error-gradient);
     color: white;
@@ -217,7 +217,7 @@
     flex: 2;
     gap: 2vw;
     width: 100%;
-    padding: 2vw 1vw;
+    padding: .5vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -225,13 +225,13 @@
 }
 
 .swiper-card-name {
-    font-size: 3.05vw;
+    font-size: 1.85vh;
 }
 
 .swiper-card-description {
     font-weight: 400;
     color:#cac24b;
-    font-size: 3.25vw;
+    font-size: 2vh;
 }
 
 .swiper-card-price-block {
@@ -240,7 +240,7 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding: 1vw;
+    padding: .5vh;
     font-family: Russo, san-serif;
     font-weight: 400;
 }

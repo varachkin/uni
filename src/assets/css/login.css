@@ -46,12 +46,12 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 1vh;
-    margin: 0 2vw;
+    margin: 0 1vw;
 }
 
 .login-form-btn-block button{
-    min-width: 35%;
+    min-width: 31%;
     justify-content: center;
 }

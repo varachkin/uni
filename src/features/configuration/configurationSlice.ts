@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { IactionGlobalStateConfigurationMachine } from "../../interfaces";
 
 const initialState: IactionGlobalStateConfigurationMachine = {
-  isMobileDevice: true,
+  isMobileDevice: false,
   language: "pl",
   // serial: null,
   serial: 'EXA01-01-01',
