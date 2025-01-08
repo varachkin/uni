@@ -15,13 +15,12 @@ import fin from "./../../assets/img/flags/fin.png";
 import esp from "./../../assets/img/flags/esp.png";
 
 import Logo from "../Logo/Logo";
-import { changeIsMobileDevice, changeLanguage } from "../../features/configuration/configurationSlice";
+import { changeLanguage } from "../../features/configuration/configurationSlice";
 import { languageConfig } from "../../langugeConfig";
-import { Swicher } from "../Swicher/Swicher";
 
 export default function Header() {
   const { pathname } = useLocation();
-  const { language, languages, serial, devMode, isMobileDevice } = useSelector(
+  const { language, languages, serial, devMode } = useSelector(
     (state: RootState) => state.configurationReducer
   );
   const dispatch = useDispatch();
@@ -101,7 +100,6 @@ export default function Header() {
         ))}
       </div>
 
-<Swicher handleChange={()=>dispatch(changeIsMobileDevice())} checked={isMobileDevice}/>
       <span className="secret-btn" ref={logoRef}></span>
 
       {pathname !== "/" ? (

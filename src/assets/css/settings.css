@@ -1,5 +1,5 @@
 :root {
-    --size: 5.45vw;
+    --size: 3vh;
 }
 
 .settings-page-background {
@@ -76,12 +76,12 @@ input[type=checkbox] {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2vw 1vw;
+    padding: 1vh;
 }
 
 .swich-wrapper span {
-    margin: 2vw;
-    font-size: 4.5vw;
+    margin: 0.5vh;
+    font-size: var(--size);
     color: #a0a0a080
 }
 
@@ -103,8 +103,8 @@ span.active-off {
 .swich-wrapper label:after {
     content: '';
     position: absolute;
-    top: 0.7vw;
-    left: 0.75vw;
+    top: calc(var(--size) / 8);
+    left: calc(var(--size) / 6);
     width: var(--size);
     height: var(--size);
     background: #fff;
@@ -118,12 +118,12 @@ span.active-off {
 
 .swich-wrapper input:checked+label:after {
     /* left: calc(100% - 0.75vw); */
-    left: calc(var(--size) + 0.75vw * 2);
+    left: calc(var(--size) + 0.35vh * 2);
     /* transform: translateX(-100%); */
 }
 
 .swich-wrapper label:active:after {
-    width: calc(var(--size) * 1.45);
+    /* width: calc(var(--size) * 1.45); */
 }
 
 .radio-wrapper {

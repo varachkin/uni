@@ -20,7 +20,7 @@ export default function PaymentMethodPage(): JSX.Element {
     const [secretInput, setSecretInput] = useState<string>('');
 
     // Selector to get state from Redux
-    const { language, QRCodeMode, employeeMode, clientTimeoutIdle, hasCart } = useSelector((state: RootState) => state.configurationReducer);
+    const { language, QRCodeMode, employeeMode, clientTimeoutIdle, hasCart, isMobileDevice } = useSelector((state: RootState) => state.configurationReducer);
 
     const handleGoToPayWithCash = (): void => {
         navigate('/service-cash-payment');
@@ -72,7 +72,7 @@ export default function PaymentMethodPage(): JSX.Element {
             <>
                 {employeeMode && (
                     <div style={{ margin: '0 auto', textAlign: 'center' }}>
-                        <input
+                        {isMobileDevice && <input
                             onChange={handleChangeSecretInput}
                             value={secretInput}
                             style={{
@@ -81,7 +81,7 @@ export default function PaymentMethodPage(): JSX.Element {
                                 top: '-1000%'
                             }}
                             ref={inputRef}
-                        />
+                        />}
                     </div>
                 )}
                 <div className="payment-method-container" onClick={handleFocusInput}>

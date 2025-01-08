@@ -71,7 +71,7 @@ export default function SwiperCube({
       cubeEffect={{
         shadow: true,
         slideShadows: true,
-        shadowOffset: 150,
+        shadowOffset: 80,
         shadowScale: 1,
       }}
       coverflowEffect={{

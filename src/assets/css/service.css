@@ -17,13 +17,16 @@
 .service-page-wrapper {
     position: fixed;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     flex: 1;
     top: 0;
     left: 0;
     z-index: 1;
     overflow: hidden;
     animation: fade 0.35s linear forwards;
+    display: flex;
+    flex-direction: column;
+    padding: 2vh;
     /* Added 'forwards' to persist the final state */
 }
 
@@ -49,6 +52,8 @@
     height: 100%;
     padding: 8vh 2vh 1vh;
     color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .service-page-wrapper>span {
@@ -221,4 +226,9 @@
     animation-delay: -35s;
     transform-origin: 13vw 3vh;
     box-shadow: -34vmin 0 4.641330618731151vmin currentColor;
+}
+
+.technicalbreak-container{
+    flex: 1;
+    display: flex;
 }

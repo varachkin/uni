@@ -224,7 +224,7 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
                   {isLoaded ? (
                     <>
                       <div className="title">{languageConfig[language].CART_PAGE.TITLE}</div>
-                      <div style={{ height: `${discountCodeMode ? isMobileDevice ? '55vh' : '61vh' : isMobileDevice ? '68vh' : '75vh'}` }}>
+                      <div style={{ height: `${discountCodeMode ? '61vh' : '75vh'}` }}>
                         <TouchScreenList>
                           {cart?.map((product, index) => (
                             <CartProductCard
@@ -271,7 +271,6 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
                         handleSubmit={handleSubmitCode}
                         isButton={true}
                         autoClear={true}
-                        isShow={!isMobileDevice}
                       />
                     </div>
                   )}
@@ -299,6 +298,7 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
                           handleSubmit={handleSubmitCode}
                           isButton={true}
                           autoClear={true}
+                          isShow={!isMobileDevice}
                         />
                       </div>
                     )}

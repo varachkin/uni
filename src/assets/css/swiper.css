@@ -1,6 +1,7 @@
 .swiper.swiper-cube {
     width: 100%;
-    flex: 1;
+    /* flex: 1; */
+    height: 92%;
     display: flex;
 }
 .swiper-cube .swiper-cube-shadow:before{

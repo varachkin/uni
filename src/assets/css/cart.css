@@ -148,9 +148,10 @@
 
 .cart-icon-wrapper {
   position: relative;
-  z-index: 5;
-  top: 0vw;
+  z-index: 15;
+  bottom: 2vw;
   right: 0vw;
+  /* transform: scale(1.25); */
   display: block;
   aspect-ratio: 1/1;
   background-color: #d39000;

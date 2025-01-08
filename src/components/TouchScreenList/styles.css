@@ -42,7 +42,7 @@ body {
 }
 
 #swiper-list .swiper-wrapper{
-  /* min-height: 100% !important; */
+  min-height: 100% !important;
 }
 #swiper-list.center .swiper-wrapper{
   justify-content: center;

@@ -1,9 +1,13 @@
+:root {
+    --size-gear: 10vh;
+}
+
 #wrapper-gears {
-    width: 100%;
+    width: 90vw;
     box-sizing: border-box;
 
     /*padding: 5vw;*/
-    transform: scale(4);
+    transform: scale(1);
     opacity: 0.9;
 }
 
@@ -15,33 +19,33 @@
 
 .gears-container {
     width: 150px;
-    min-height: 10vh;
-    font-size: 0.725em;
+    min-height: 20vh;
+    font-size: calc(var(--size-gear) / 2.75);
     position: relative;
     margin: 0px auto;
 }
 
 .gear-rotate {
-    width: 2em;
-    height: 2em;
-    top: 33%;
-    left: 51%;
+    width: var(--size-gear);
+    height: var(--size-gear);
+    top: calc(var(--size-gear) * 0.75);
+    right: 52.55%;
     background: var(--third-color);
     position: absolute;
-    border-radius: 1em;
+    border-radius: calc(var(--size-gear) / 2);
     -webkit-animation: 5s gear-rotate linear infinite;
     -moz-animation: 5s gear-rotate linear infinite;
     animation: 5s gear-rotate linear infinite;
 }
 
 .gear-rotate-left {
-    top: 53%;
-    left: 13%;
-    width: 2em;
-    height: 2em;
+    top: calc(var(--size-gear) * 0.115);
+    left: 52.55%;
+    width: calc(var(--size-gear));
+    height: calc(var(--size-gear));
     background: var(--third-color);
     position: absolute;
-    border-radius: 1em;
+    border-radius: calc(var(--size-gear) / 2);
     -webkit-animation: 5s gear-rotate-left linear infinite;
     -moz-animation: 5s gear-rotate-left linear infinite;
     animation: 5s gear-rotate-left linear infinite;
@@ -49,8 +53,8 @@
 
 .gear-rotate::before,
 .gear-rotate-left::before {
-    width: 2.8em;
-    height: 2.8em;
+    width: calc(var(--size-gear) * 1.4);
+    height: calc(var(--size-gear) * 1.4);
     background:
         -webkit-linear-gradient(0deg, transparent 39%, var(--third-color) 39%, var(--third-color) 61%, transparent 61%),
         -webkit-linear-gradient(60deg, transparent 42%, var(--third-color) 42%, var(--third-color) 58%, transparent 58%),
@@ -70,21 +74,21 @@
         linear-gradient(120deg, transparent 42%, var(--third-color) 42%, var(--third-color) 58%, transparent 58%);
     position: absolute;
     content: "";
-    top: -.4em;
-    left: -.4em;
-    border-radius: 1.4em;
+    top: calc(var(--size-gear) / -5.375);
+    left: calc(var(--size-gear) / -5.375);
+    border-radius: calc(var(--size-gear) / 1.15);
 }
 
 .gear-rotate::after,
 .gear-rotate-left::after {
-    width: 1em;
-    height: 1em;
+    width: calc(var(--size-gear) / 2);
+    height: calc(var(--size-gear) / 2);
     background: var(--default-gradient-radial);
     position: absolute;
     content: "";
-    top: .5em;
-    left: .5em;
-    border-radius: .5em;
+    top: calc(var(--size-gear) / 4);
+    left: calc(var(--size-gear) / 4);
+    border-radius: calc(var(--size-gear) / 4);
 }
 
 @-webkit-keyframes gear-rotate {

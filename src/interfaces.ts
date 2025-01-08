@@ -1,5 +1,5 @@
 export interface IactionGlobalStateConfigurationMachine {
-    isMobileDevice: boolean;
+    isMobileDevice: boolean,
     language: string;
     serial: string | null;
     hasCart: boolean;
