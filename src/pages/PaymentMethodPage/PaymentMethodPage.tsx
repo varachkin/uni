@@ -72,7 +72,7 @@ export default function PaymentMethodPage(): JSX.Element {
             <>
                 {employeeMode && (
                     <div style={{ margin: '0 auto', textAlign: 'center' }}>
-                        {isMobileDevice && <input
+                        {!isMobileDevice && <input
                             onChange={handleChangeSecretInput}
                             value={secretInput}
                             style={{
