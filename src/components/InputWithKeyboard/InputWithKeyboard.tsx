@@ -209,10 +209,13 @@ export const InputWithKeyboard: React.FC<InputWithKeyboardProps> = ({
       setInput((prev) => ({ ...prev, [id]: defaultValue }));
       keyboardRef.current.setInput(defaultValue)
     }
-    if (getValue) {
-      getValue({ [id]: keyboardRef.current.getInput() });
-    }
   }, [])
+
+  useEffect(() => {
+    if (getValue) {
+      getValue({ [id]: input[id] });
+    }
+  }, [input])
 
   return (
     <>
