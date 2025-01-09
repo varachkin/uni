@@ -273,6 +273,7 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
                         autoClear={true}
                       />
                     </div>
+
                   )}
                   <div className="buttons-footer ">
                     {<>
@@ -326,6 +327,37 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
                           autoClear={true}
                           isShow={!isMobileDevice}
                         />
+                        <>
+                          <div className="buttons-footer ">
+                            {<>
+                              <Button
+                                onClick={handleGoBack}
+                              >
+                                <TbCircleArrowLeftFilled />
+                                {languageConfig[language].BUTTONS.BACK}
+                              </Button>
+                              {isError ? (
+                                <Button
+                                  className="service"
+                                  disabled={!cart?.length}
+                                  onClick={handleOpenModal}
+                                >
+                                  {languageConfig[language].BUTTONS.CORRECT_ALL}{" "}
+                                  <MdPublishedWithChanges />
+                                </Button>
+                              ) : (
+                                <Button
+                                  disabled={!cart?.length}
+                                  onClick={handleGoToPaymentPage}
+                                >
+                                  {languageConfig[language].BUTTONS.BUY} <HiMiniCurrencyEuro />
+                                </Button>
+                              )}
+                            </>}
+                          </div>
+
+                        </>
+
                       </div>
                     )}
                   </div>

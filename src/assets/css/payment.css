@@ -4,12 +4,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    /* height: 82vh; */
-    flex: 1;
+    justify-content: space-around;
+    height: 100%;
 }
 .payment-method-container .swiper{
-    height: 70vh !important;
+    height: 60vh !important;
 }
 
 .payment-method-wrapper-list {
