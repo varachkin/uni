@@ -271,6 +271,7 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
                         handleSubmit={handleSubmitCode}
                         isButton={true}
                         autoClear={true}
+                        isShow={!isMobileDevice}
                       />
                     </div>
 
