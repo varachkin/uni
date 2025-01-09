@@ -17,6 +17,7 @@ import PaymentMethodPage from "./pages/PaymentMethodPage/PaymentMethodPage";
 import CartPage from "./pages/CartPage/CartPage";
 import CardPaymentMethod from "./pages/CardPaymentMethod/CardPaymentMethod";
 import CashPaymentMethod from "./pages/CashPaymentMethod/CashPaymentMethod";
+import EmailConfirmation from "./pages/EmailCofirmation/EmailConfirmation";
 
 interface AppRouterProps {
     children?: ReactNode;
@@ -33,6 +34,7 @@ export default function AppRouter(props: AppRouterProps | null) {
                         <Route path="/payment" element={<PaymentMethodPage />}/>
                         <Route path="/cart" element={<CartPage />}/>
                         <Route path="/login" element={<LoginPage />}/>
+                        <Route path="/service-email" element={<EmailConfirmation />}/>
                         <Route path="/service-card-payment" element={<CardPaymentMethod />}/>
                         <Route path="/service-cash-payment" element={<CashPaymentMethod />}/>
                         <Route path="/settings" element={<ServiceMenuPage />}/>

@@ -30,7 +30,7 @@ export default function CardPaymentMethod() {
               <img src={terminalImg} alt="terminal" />
             </div>
           ) : (
-            <Loader size={30} />
+            <Loader size={15} />
           )}
 
           {isCardAccepted ? (

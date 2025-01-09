@@ -5,7 +5,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 82vh;
+    /* height: 82vh; */
+    flex: 1;
+}
+.payment-method-container .swiper{
+    height: 70vh !important;
 }
 
 .payment-method-wrapper-list {

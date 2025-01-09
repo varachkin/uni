@@ -46,7 +46,7 @@ export default function CashPaymentMethod() {
             {!isCashAccepted ? (
               <img src={cashImg} alt="terminal" />
             ) : (
-              <Loader size={20} />
+              <Loader size={15} />
             )}
           </div>
 
@@ -77,7 +77,7 @@ export default function CashPaymentMethod() {
               </div>
             </>
           )}
-          <div className="buttons-footer">
+          <div className="button-wrapper">
             <Button
               isLoading={isLoading}
               disabled={isCashAccepted || isLoading}

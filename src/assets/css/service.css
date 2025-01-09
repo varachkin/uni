@@ -50,10 +50,13 @@
     position: relative;
     z-index: 2;
     height: 100%;
-    padding: 8vh 2vh 1vh;
+    padding: 8vh 1vh 1vh;
     color: white;
     display: flex;
     flex-direction: column;
+}
+.service-page-wrapper-children .buttons-footer{
+    padding: 0;
 }
 
 .service-page-wrapper>span {

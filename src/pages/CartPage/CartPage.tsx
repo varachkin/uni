@@ -216,7 +216,7 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
           <div className="cart-page-container">
             {isLoading ? (
               <div className="cart-btn-container">
-                <Loader size={30} />
+                <Loader size={15} />
               </div>
             ) : hasCart ?
               <div className="cart-page-list-wrapper">
@@ -274,14 +274,40 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
                       />
                     </div>
                   )}
+                  <div className="buttons-footer ">
+                    {<>
+                      <Button
+                        onClick={handleGoBack}
+                      >
+                        <TbCircleArrowLeftFilled />
+                        {languageConfig[language].BUTTONS.BACK}
+                      </Button>
+                      {isError ? (
+                        <Button
+                          className="service"
+                          disabled={!cart?.length}
+                          onClick={handleOpenModal}
+                        >
+                          {languageConfig[language].BUTTONS.CORRECT_ALL}{" "}
+                          <MdPublishedWithChanges />
+                        </Button>
+                      ) : (
+                        <Button
+                          disabled={!cart?.length}
+                          onClick={handleGoToPaymentPage}
+                        >
+                          {languageConfig[language].BUTTONS.BUY} <HiMiniCurrencyEuro />
+                        </Button>
+                      )}
+                    </>}
+                  </div>
                 </div>
-
               </div> :
               <>
                 <div className="service-page-container">
                   <div className="title">{languageConfig[language]?.CONFIRMATION_PRODUCT?.TITLE}</div>
                   <div className="product-confirmation-wrapper">
-                    {product ? <ProductCard product={product} /> : <Loader size={30} />}
+                    {product ? <ProductCard product={product} /> : <Loader size={15} />}
                   </div>
                   <div className="product-confirmation-discount-field">
                     {discountCodeMode && cart.length && (
@@ -306,37 +332,6 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
                 </div>
               </>
             }
-
-            <div >
-              <div className="buttons-footer ">
-                {<>
-                  <Button
-                    onClick={handleGoBack}
-                  >
-                    <TbCircleArrowLeftFilled />
-                    {languageConfig[language].BUTTONS.BACK}
-                  </Button>
-                  {isError ? (
-                    <Button
-                      className="service"
-                      disabled={!cart?.length}
-                      onClick={handleOpenModal}
-                    >
-                      {languageConfig[language].BUTTONS.CORRECT_ALL}{" "}
-                      <MdPublishedWithChanges />
-                    </Button>
-                  ) : (
-                    <Button
-                      disabled={!cart?.length}
-                      onClick={handleGoToPaymentPage}
-                    >
-                      {languageConfig[language].BUTTONS.BUY} <HiMiniCurrencyEuro />
-                    </Button>
-                  )}
-                </>}
-              </div>
-            </div>
-
           </div>
         }
         {isShowModal && (
@@ -360,6 +355,6 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
           </Modal>
         )}
       </>
-    </IdleTimerProvider>
+    </IdleTimerProvider >
   );
 }

@@ -103,7 +103,7 @@ export default function HomePage({ children }: HomePageProps): JSX.Element {
         <div className="home-container">
           {isLoading ? (
             <div className="loader-wrapper">
-              <Loader size={30} />
+              <Loader size={15} />
             </div>
           ) : isLoaded ? (
             products.length ? (

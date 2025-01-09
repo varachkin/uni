@@ -58,7 +58,7 @@ export default function PaymentMethodPage(): JSX.Element {
     }, []); // Runs once when the component mounts
 
     useEffect(() => {
-        if (secretInput && secretInput.length === 10) {
+        if (inputRef && secretInput && secretInput.length === 10) {
             navigate("/service-employee-card-payment", {
                 state: {
                     employeeId: secretInput,
@@ -72,7 +72,7 @@ export default function PaymentMethodPage(): JSX.Element {
             <>
                 {employeeMode && (
                     <div style={{ margin: '0 auto', textAlign: 'center' }}>
-                        {isMobileDevice && <input
+                        {!isMobileDevice && <input
                             onChange={handleChangeSecretInput}
                             value={secretInput}
                             style={{
@@ -106,6 +106,18 @@ export default function PaymentMethodPage(): JSX.Element {
                                 </div>
                             )}
 
+                            <div className="payment-method-wrapper" onClick={handleGoToPayWithCash}>
+                                <div className="payment-method-block">
+                                    <img src={cashImg} alt="cash" />
+                                </div>
+                                <div className="service-page-subtitle">{languageConfig[language].PAYMENT_PAGE.CASH}</div>
+                            </div>
+                            <div className="payment-method-wrapper" onClick={handleGoToPayWithCash}>
+                                <div className="payment-method-block">
+                                    <img src={cashImg} alt="cash" />
+                                </div>
+                                <div className="service-page-subtitle">{languageConfig[language].PAYMENT_PAGE.CASH}</div>
+                            </div>
                             <div className="payment-method-wrapper" onClick={handleGoToPayWithCash}>
                                 <div className="payment-method-block">
                                     <img src={cashImg} alt="cash" />

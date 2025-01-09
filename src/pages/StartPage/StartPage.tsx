@@ -60,7 +60,7 @@ export const StartPage = ({ children }: StartPageProps): JSX.Element => {
     }, [serial])
 
     return !serial ? (
-        <Loader size={30} />
+        <Loader size={15} />
     ) : (
         <div className="start-page-wrapper">
             <div

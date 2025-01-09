@@ -37,6 +37,9 @@ export const TerminalSettingsComponent = () => {
                 <Button onClick={() => navigate('/service-waiting')}>Waiting</Button>
             </section>
             <section className="button-wrapper">
+                <Button onClick={() => navigate('/service-email')}>Email</Button>
+            </section>
+            <section className="button-wrapper">
                 <Button onClick={() => navigate('/payment')}>payment method</Button>
             </section>
             <section className="button-wrapper">

@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import Loader from "../Loader/Loader";
 
 interface ButtonProps {
-  children: ReactNode;
+  children?: ReactNode;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void | undefined;
   variant?: "secondary" | "remove";
   disabled?: boolean;
