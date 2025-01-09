@@ -17,7 +17,7 @@ export default function CardPaymentMethod() {
 
   useEffect(() => {
     setTimeout(() => setIsCardAccepted(true), 4000)
-    setTimeout(() => navigate('/service-success'), 9000)
+    // setTimeout(() => navigate('/service-success'), 9000)
   }, [])
 
 
