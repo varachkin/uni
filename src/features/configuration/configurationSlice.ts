@@ -7,6 +7,7 @@ const initialState: IactionGlobalStateConfigurationMachine = {
   // serial: null,
   serial: 'EXA01-01-01',
   hasCart: false,
+  emailConfirmation: true,
   isCheckingTechBreak: false,
   technical_break: false,
   devMode: false,
@@ -43,6 +44,9 @@ export const configurationSlice = createSlice({
     },
     changeCartMode: (state) => {
       state.hasCart = !state.hasCart;
+    },
+    changeEmailConfirmationMode: (state) => {
+      state.emailConfirmation = !state.emailConfirmation;
     },
     changeDevMode: (state) => {
       state.devMode = !state.devMode;
@@ -94,6 +98,7 @@ export const {
   changeLanguage,
   setSerialOfMachine,
   changeCartMode,
+  changeEmailConfirmationMode,
   changeDevMode,
   setTechBreak,
   setCheckingTechnicalBreak,

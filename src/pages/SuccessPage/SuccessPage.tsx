@@ -76,7 +76,7 @@ const fakeSuccess = [{
 }]
 
 export default function SuccessPage() {
-    const { language } = useSelector((state: RootState) => state.configurationReducer);
+    const { language, emailConfirmation } = useSelector((state: RootState) => state.configurationReducer);
     const navigate = useNavigate();
     const location = useLocation();
     const start = useStartHook()
@@ -118,8 +118,8 @@ export default function SuccessPage() {
     const transactionID = locationState?.transactionData?.transactionID || null;
 
     const handleGoStart = () => {
-        if (transactionID) {
-            navigate('/service-email-confirmation', { state: { transactionID } });
+        if (emailConfirmation) {
+            navigate('/service-email', { state: { transactionID } });
         } else {
             start()
         }

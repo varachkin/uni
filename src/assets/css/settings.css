@@ -118,7 +118,7 @@ span.active-off {
 
 .swich-wrapper input:checked+label:after {
     /* left: calc(100% - 0.75vw); */
-    left: calc(var(--size) + 0.35vh * 2);
+    left: calc(var(--size) + 0.75vw * 2);
     /* transform: translateX(-100%); */
 }
 

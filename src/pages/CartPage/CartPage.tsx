@@ -29,6 +29,7 @@ import type { RootState } from "../../store/store";
 import { CartProductCard } from "../../components/CartProductCard/CartProductCard";
 import { hardCodeProducts } from "../../constants";
 import { ProductCard } from "../../components/ProductCard/ProductCard";
+import { Alert } from "../../components/Alert/Alert";
 
 // Define types for Cart and Product
 interface Product {
@@ -45,7 +46,9 @@ interface CartPageProps { }
 // Main Component
 export default function CartPage({ }: CartPageProps): JSX.Element {
   const [isShowModal, setIsShowModal] = useState<boolean>(false);
+  const [isAlert, setIsAlert] = useState<boolean | 'accepted' | 'rejected'>(false)
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isAlertLoading, setIsAlertLoading] = useState<boolean>(false);
   const [isLoaded, setIsLoaded] = useState<boolean | null>(null);
   const [isError, setIsError] = useState<boolean>(false);
   const [product, setPrduct] = useState(null)
@@ -97,6 +100,11 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
   };
 
   const handleSubmitCode = (code: string) => {
+    setIsAlertLoading(true)
+    setIsAlert('rejected');
+    setTimeout(() => {
+      setIsAlertLoading(false)
+    }, 3000)
     console.log(code)
   };
 
@@ -387,6 +395,7 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
           </Modal>
         )}
       </>
+        {isAlert && <Alert type={isAlert} handleCloseModal={()=> setIsAlert(false)} isLoading={isAlertLoading}/>}
     </IdleTimerProvider >
   );
 }

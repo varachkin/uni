@@ -2,6 +2,11 @@ import type { LangConfigTranslations } from "./interfaces";
 
 export const languageConfig: LangConfigTranslations = {
     pl: {
+        ALERT: {
+            TITLE_ACCEPTED: 'przyjęte',
+            TITLE_REJECTED: 'ODRZUCONY',
+            
+        },
         START_PAGE: {
             TAP_TO_START: 'DOTKNIJ ABY ROZPOCZĄĆ',
             OR_TAP_TO_START: 'LUB DOTKNIJ ABY ROZPOCZĄĆ',

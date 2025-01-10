@@ -35,7 +35,7 @@ export const StartPage = ({ children }: StartPageProps): JSX.Element => {
     };
 
     const query = JSON.stringify({ serial: serial });
-    const url = `https://testwebpage?${query}`;
+    const url = `https://uni-omega.vercel.app/?${query}`;
 
     useEffect(() => {
         if (technical_break) {

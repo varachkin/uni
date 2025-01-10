@@ -32,7 +32,7 @@
     border: 0.15vh solid rgba(255, 255, 255, 0.349);
     /* border: 0.25vh solid rgb(6, 8, 139); */
     padding: 1vh;
-    border-radius: 1.5vw;
+    border-radius: 1vw;
     margin: 1vw auto;
     width: 100% !important;
     color: rgb(196, 195, 195);
@@ -163,9 +163,15 @@ h3 {
 
 .hg-theme-default .hg-button {
     height: 4.05vh !important;
-    font-size: 3.15vw;
+    font-size: 1.65vh;
+}
+.simple-keyboard.hg-theme-default .hg-row .hg-button-container, .simple-keyboard.hg-theme-default .hg-row .hg-button:not(:last-child){
+    margin-right: 0.85vw;
 }
 
+.simple-keyboard.hg-theme-default .hg-row:not(:last-child){
+    margin-bottom: 0.85vw;
+}
 .numbers-wrapper .hg-theme-default .hg-button {
     height: 4.75vh;
 }
@@ -178,13 +184,13 @@ h3 {
 
 .simple-keyboard.hg-theme-default .hg-button.hg-functionBtn {
     width: 65%;
-    min-height: 4.5vh;
+    min-height: 3.5vh;
 }
 
 .simple-keyboard.hg-theme-default .hg-button.hg-standardBtn,
 .simple-keyboard.hg-theme-default .hg-button.hg-button-clear {
     width: 33.3%;
-    min-height: 4.5vh;
+    min-height: 3.5vh;
 }
 
 .hg-rows .hg-row .hg-button-enter {

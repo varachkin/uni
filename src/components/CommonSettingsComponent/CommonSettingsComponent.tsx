@@ -5,6 +5,7 @@ import {
   changeAnimatedQR,
   changeCartMode,
   changeDiscountCodeMode,
+  changeEmailConfirmationMode,
   changeEmployeeMode,
   changeMobileAppMode,
   changeQRCodeMode
@@ -21,7 +22,7 @@ export const CommonSettingsComponent = () => {
     navigate("/");
   };
 
-  const { QRCodeMode, employeeMode, mobileAppMode, discountCodeMode, animatedQR, language, hasCart } = useSelector((state: RootState) => state.configurationReducer);
+  const { QRCodeMode, employeeMode, mobileAppMode, discountCodeMode, animatedQR, language, hasCart, emailConfirmation } = useSelector((state: RootState) => state.configurationReducer);
 
   const handleChangeQrPay = () => {
     dispatch(changeQRCodeMode());
@@ -47,12 +48,20 @@ export const CommonSettingsComponent = () => {
     dispatch(changeCartMode());
   };
 
+  const handleChangeEmailConfirmation = () => {
+    dispatch(changeEmailConfirmationMode());
+  };
+
   return (
     <div className="terminal-settings-wrapper">
       <div>
 
         <Swicher checked={hasCart} handleChange={handleChangeCartMode}>
           <h3 className="service-page-subtitle">Cart mode</h3>
+        </Swicher>
+
+        <Swicher checked={emailConfirmation} handleChange={handleChangeEmailConfirmation}>
+          <h3 className="service-page-subtitle">Email confirmation</h3>
         </Swicher>
 
         <Swicher checked={QRCodeMode} handleChange={handleChangeQrPay}>

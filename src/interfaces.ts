@@ -3,6 +3,7 @@ export interface IactionGlobalStateConfigurationMachine {
     language: string;
     serial: string | null;
     hasCart: boolean;
+    emailConfirmation: boolean;
     isCheckingTechBreak: boolean;
     technical_break: boolean;
     devMode: boolean;

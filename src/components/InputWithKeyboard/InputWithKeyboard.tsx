@@ -20,6 +20,7 @@ interface InputWithKeyboardProps {
   isButtonDisabled?: boolean;
   autoClear?: boolean;
   isShow?: boolean;
+  isButtonLoading?: boolean;
 }
 
 interface InputState {
@@ -79,6 +80,7 @@ export const InputWithKeyboard: React.FC<InputWithKeyboardProps> = ({
   defaultValue = "",
   bottom = 0,
   isButton = false,
+  isButtonLoading = false,
   isButtonDisabled = false,
   autoClear = false,
   isShow = true
@@ -179,7 +181,7 @@ export const InputWithKeyboard: React.FC<InputWithKeyboardProps> = ({
 
   const setActiveInput = (name: string) => {
     setInputName(name);
-    if(isShow) setKeyboardOpen(true);
+    if (isShow) setKeyboardOpen(true);
   };
 
   const validateEmail = (email: string): boolean => {
@@ -245,14 +247,15 @@ export const InputWithKeyboard: React.FC<InputWithKeyboardProps> = ({
             </label>
             {isButton && (
               <Button
+                isLoading={isButtonLoading}
                 onClick={submit}
                 disabled={
                   id === "email"
-                    ? !validateEmail(input[inputName || ""]) || isButtonDisabled
+                    ? !validateEmail(input[inputName || ""]) || isButtonDisabled || isButtonLoading
                     : !input[inputName || ""]
                 }
               >
-                {isButtonDisabled ? <Loader /> : <FaArrowAltCircleRight />}
+                {isButtonDisabled && isButtonLoading ? <Loader /> : <FaArrowAltCircleRight />}
               </Button>
             )}
           </React.Fragment>
