@@ -9,8 +9,9 @@
     top: 0;
     left: 0;
     right: 0;
-    margin: 5rem auto;
-    transform: scale(2);
+    margin: 5vh auto;
+    transform: scale(1.5);
+    overflow: hidden;
   }
   
   .clock .top {
@@ -73,9 +74,9 @@
     height: 30vw;
     width: 30vw;
     position: absolute;
-    left:9.25vw;
-    top: 9.25vw;
-    transform: rotate(135deg);
+    left: 25%;
+    top: 25%;
+    transform: rotate(120deg);
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
   }
   

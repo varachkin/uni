@@ -1,35 +1,27 @@
 @keyframes rippleStart {
     0% {
         opacity: 0;
-        transform: scale(-1);
+        transform: scale(0);
         border: 0.25vw solid var(--secondary-color);
         visibility: visible;
     }
 
-    10% {
-        transform: scale(0);
-        visibility: visible;
-    }
-
     25% {
-        transform: scale(1.5);
         opacity: 0.2;
         border: 0.75vw solid var(--secondary-color);
     }
 
     50% {
-        transform: scale(3);
-        opacity: 0.0022;
+        opacity: 0.007;
         border: 1vw solid var(--secondary-color);
     }
 
     75% {
-        transform: scale(4);
-        opacity: 0.004;
+        opacity: 0.005;
     }
 
     100% {
-        transform: scale(4.75);
+        transform: scale(7);
         opacity: 0.0001;
     }
 }
@@ -126,7 +118,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    /* width: 100%; */
     aspect-ratio: 1/1;
 }
 
@@ -137,7 +129,7 @@
     position: absolute;
     height: 50vw;
     aspect-ratio: 1/1;
-    border: 3vw solid var(--secondary-color);
+    border: .25vw solid var(--secondary-color);
     border-radius: 50%;
     transform: scale(-1);
     visibility: hidden;

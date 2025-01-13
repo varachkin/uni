@@ -112,18 +112,6 @@ export default function PaymentMethodPage(): JSX.Element {
                                 </div>
                                 <div className="service-page-subtitle">{languageConfig[language].PAYMENT_PAGE.CASH}</div>
                             </div>
-                            <div className="payment-method-wrapper" onClick={handleGoToPayWithCash}>
-                                <div className="payment-method-block">
-                                    <img src={cashImg} alt="cash" />
-                                </div>
-                                <div className="service-page-subtitle">{languageConfig[language].PAYMENT_PAGE.CASH}</div>
-                            </div>
-                            <div className="payment-method-wrapper" onClick={handleGoToPayWithCash}>
-                                <div className="payment-method-block">
-                                    <img src={cashImg} alt="cash" />
-                                </div>
-                                <div className="service-page-subtitle">{languageConfig[language].PAYMENT_PAGE.CASH}</div>
-                            </div>
                         </div>
                     </TouchScreenList>
                     <div className="service-page-subtitle">

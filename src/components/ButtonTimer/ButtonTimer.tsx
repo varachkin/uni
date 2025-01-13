@@ -9,12 +9,12 @@ interface ButtonTimerProps {
 }
 
 export const ButtonTimer: React.FC<ButtonTimerProps> = ({
-                                                            children,
-                                                            onClick,
-                                                            callback,
-                                                            status = 'default',
-                                                            timer = 9,
-                                                        }) => {
+    children,
+    onClick,
+    callback,
+    status = 'default',
+    timer = 9,
+}) => {
     const [countdown, setCountdown] = useState<number>(timer);
     const [disabled, setDisabled] = useState<boolean>(false);
 
@@ -26,7 +26,7 @@ export const ButtonTimer: React.FC<ButtonTimerProps> = ({
     useEffect(() => {
         const intervalID = setInterval(() => {
             setCountdown((prevCountdown) => {
-                if (prevCountdown === 0) {
+                if (prevCountdown <= 1) {
                     clearInterval(intervalID);
                     if (callback) callback();
                     return 0;

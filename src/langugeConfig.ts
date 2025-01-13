@@ -5,7 +5,6 @@ export const languageConfig: LangConfigTranslations = {
         ALERT: {
             TITLE_ACCEPTED: 'przyjęte',
             TITLE_REJECTED: 'ODRZUCONY',
-            
         },
         START_PAGE: {
             TAP_TO_START: 'DOTKNIJ ABY ROZPOCZĄĆ',
@@ -160,6 +159,10 @@ export const languageConfig: LangConfigTranslations = {
         }
     },
     en: {
+        ALERT: {
+            TITLE_ACCEPTED: 'Accepted',
+            TITLE_REJECTED: 'Rejected',
+        },
         START_PAGE: {
             TAP_TO_START: 'TAP TO START',
             OR_TAP_TO_START: 'OR TAP TO START',
@@ -311,6 +314,10 @@ export const languageConfig: LangConfigTranslations = {
         }
     },
     de: {
+        ALERT: {
+            TITLE_ACCEPTED: 'Akzeptiert',
+            TITLE_REJECTED: 'Abgelehnt',
+        },
         START_PAGE: {
             TAP_TO_START: 'TIPPEN UM ZU STARTEN',
             OR_TAP_TO_START: 'ODER TIPPEN UM ZU STARTEN',
@@ -461,6 +468,10 @@ export const languageConfig: LangConfigTranslations = {
         }
     },
     fr: {
+        ALERT: {
+            TITLE_ACCEPTED: 'Accepté',
+            TITLE_REJECTED: 'Rejeté',
+        },
         START_PAGE: {
             TAP_TO_START: 'TOUCHEZ POUR COMMENCER',
         },
@@ -527,6 +538,10 @@ export const languageConfig: LangConfigTranslations = {
         }
     },
     ua: {
+        ALERT: {
+            TITLE_ACCEPTED: 'Прийнято',
+            TITLE_REJECTED: 'Відхилено',
+        },
         START_PAGE: {
             TAP_TO_START: 'ТАП, ЩОБ ПОЧАТИ',
         },

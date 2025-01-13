@@ -17,15 +17,15 @@
 } */
 
 .product-confirmation-wrapper .swiper-card-wrapper .swiper-card-name{
-    font-size: 6vw;
+    font-size: 3.5vh;
 }
 
 .product-confirmation-wrapper .swiper-card-wrapper .swiper-card-description{
-    font-size: 8vw;
+    font-size: 4.75vh;
 }
 
 .product-confirmation-wrapper .swiper-card-wrapper .swiper-card-price-block .current-price{
-    font-size: 7vw;
+    font-size: 4.5vh;
 }
 
 .product-confirmation-wrapper .swiper-card-wrapper .swiper-card-price-block .old-price{

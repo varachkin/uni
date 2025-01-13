@@ -5,7 +5,7 @@ type LoaderProps = {
     variant?: string;
 };
 
-const Loader = ({size = 2.5, variant = 'color'}: LoaderProps) => {
+const Loader = ({size = 2, variant = 'color'}: LoaderProps) => {
     const loaderStyle: React.CSSProperties = {
         '--loader-size': `${size}vh`,
     } as React.CSSProperties & { '--loader-size': string };
