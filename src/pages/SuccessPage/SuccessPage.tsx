@@ -119,7 +119,7 @@ export default function SuccessPage() {
 
     const handleGoStart = () => {
         if (emailConfirmation) {
-            navigate('/service-email', { state: { transactionID } });
+            navigate('/service-email', { replace: true, state: { transactionID } });
         } else {
             start()
         }
