@@ -50,7 +50,6 @@ export const LoginPage: React.FC = () => {
                                     defaultValue="servicevr"
                                     getValue={getValue}
                                     placeholder="login"
-                                    handleSubmit={handleGoToSettings}
                                     bottom={10}
                                     isShow={!isMobileDevice}
                                 />
@@ -60,7 +59,6 @@ export const LoginPage: React.FC = () => {
                                     defaultValue="SthVR15"
                                     getValue={getValue}
                                     placeholder="password"
-                                    handleSubmit={handleGoToSettings}
                                     bottom={10}
                                     isShow={!isMobileDevice}
                                 />

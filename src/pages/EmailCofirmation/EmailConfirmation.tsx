@@ -87,7 +87,8 @@ export default function EmailConfirmation(): JSX.Element {
                         className="discont-code"
                         id="email"
                         getValue={handleChangeEmail}
-                        handleSubmit={email && validateEmail(email) ? handleSubmit : undefined}
+                        handleSubmit={handleSubmit}
+                        validate={validateEmail}
                         bottom={10}
                         isShow={!isMobileDevice}
                     />

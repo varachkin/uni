@@ -71,6 +71,8 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
     navigate("/payment");
   };
 
+
+
   const handleOpenModal = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     setIsShowModal(true);
@@ -145,78 +147,6 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
     }
   }, []);
 
-  //   const codeDetails = await validateDiscountCode(discount_code);
-
-  //   if (!codeDetails) return;
-
-  //   dispatch(setDiscountCodeValue(discount_code));
-
-  //   if (discount_code === codeDetails.code) {
-  //     const relevantProductsInCart = cart.filter((item) =>
-  //       codeDetails.products.includes(item.product_id)
-  //     );
-
-  //     const hasUsedDiscountCode = relevantProductsInCart.some((item) => item.discount_code_used);
-  //     const hasPromoCode = relevantProductsInCart.some((item) => item.product.promo_code_used);
-
-  //     if (hasUsedDiscountCode) {
-  //       setShowAlert("usedDiscountCode");
-  //       setTimeout(() => setShowAlert(null), 2000);
-  //       return;
-  //     }
-
-  //     if (hasPromoCode) {
-  //       setShowAlert("usedPromoCode");
-  //       setTimeout(() => setShowAlert(null), 2000);
-  //       return;
-  //     }
-
-  //     const isDiscountValid = relevantProductsInCart.some((item) => {
-  //       if (codeDetails.value_type === "amount") {
-  //         return item.product.price >= codeDetails.value;
-  //       } else if (codeDetails.value_type === "percent") {
-  //         return item.product.price > 0;
-  //       }
-  //       return false;
-  //     });
-
-  //     if (isDiscountValid) {
-  //       dispatch(applyDiscountCode({ discount_data: codeDetails }));
-  //       setShowAlert("accepted");
-  //     } else {
-  //       setShowAlert("noProducts");
-  //     }
-  //   } else {
-  //     setShowAlert("declined");
-  //   }
-
-  //   setTimeout(() => {
-  //     setShowAlert(null);
-  //   }, 2000);
-  // };
-
-  // const getAnimatedTitle = (showAlert: string | null, language: string, locales: any) => {
-  //   switch (showAlert) {
-  //     case "accepted":
-  //       return (
-  //         <AnimatedTitle title={languageConfig[language].DISCOUNT_CODE.DISCOUNT_CODE_ACCEPTED} />
-  //       );
-  //       break;
-  //     case "usedDiscountCode":
-  //       return (
-  //         <AnimatedTitle title={languageConfig[language].DISCOUNT_CODE.PRODUCT_ALREADY_DISCOUNTED} />
-  //       );
-  //       break;
-  //     case "usedPromoCode":
-  //       return <AnimatedTitle title="kupon nie działa na przecenione produkty" />;
-  //       break;
-  //     default:
-  //       return (
-  //         <AnimatedTitle title={languageConfig[language].DISCOUNT_CODE.DISCOUNT_CODE_DECLINED} />
-  //       );
-  //       break;
-  //   }
-  // };
   return (
     <IdleTimerProvider timeout={clientTimeoutIdle} onIdle={onIdle}>
       <>
@@ -335,6 +265,7 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
                           isButton={true}
                           autoClear={true}
                           isShow={!isMobileDevice}
+
                         />
                         <>
                           <div className="buttons-footer ">
@@ -396,7 +327,7 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
           </Modal>
         )}
       </>
-        {isAlert && <Alert type={isAlert} handleCloseModal={()=> setIsAlert(false)} isLoading={isAlertLoading}/>}
+      {isAlert && <Alert type={isAlert} handleCloseModal={() => setIsAlert(false)} isLoading={isAlertLoading} />}
     </IdleTimerProvider >
   );
 }
