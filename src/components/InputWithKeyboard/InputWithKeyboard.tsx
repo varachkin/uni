@@ -209,6 +209,7 @@ export const InputWithKeyboard: React.FC<InputWithKeyboardProps> = ({
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Enter") {
+        inputRef?.current?.blur()
         submit(); // Trigger the button's action when Enter is pressed
       }
     };
