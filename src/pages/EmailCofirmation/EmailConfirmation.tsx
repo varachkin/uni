@@ -23,6 +23,8 @@ export default function EmailConfirmation(): JSX.Element {
     const [showAlert] = useState<"accepted" | "error" | null>(null);
     const onIdle = useLogoutHook();
     const start = useStartHook()
+
+
     const handleSubmit = (): void => {
         // Placeholder for submission logic
         setIsLoading(true)
@@ -85,7 +87,7 @@ export default function EmailConfirmation(): JSX.Element {
                         className="discont-code"
                         id="email"
                         getValue={handleChangeEmail}
-                        handleSubmit={handleSubmit}
+                        handleSubmit={email && validateEmail(email) ? handleSubmit : undefined}
                         bottom={10}
                         isShow={!isMobileDevice}
                     />
