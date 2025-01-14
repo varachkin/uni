@@ -181,7 +181,7 @@ export default function WarningPage() {
 
     const handleGoStart = (): void => {
         if (transactionID) {
-            navigate('/service-email', { state: { transactionID } });
+            navigate('/service-email', {replace: true, state: { transactionID } });
         } else {
             start()
         }

@@ -23,15 +23,15 @@ export default function PaymentMethodPage(): JSX.Element {
     const { language, QRCodeMode, employeeMode, clientTimeoutIdle, hasCart, isMobileDevice } = useSelector((state: RootState) => state.configurationReducer);
 
     const handleGoToPayWithCash = (): void => {
-        navigate('/service-cash-payment');
+        navigate('/service-cash-payment', { replace: true });
     };
 
     const handleGoToPayWithCard = (): void => {
-        navigate('/service-card-payment');
+        navigate('/service-card-payment', { replace: true });
     };
 
     const handleGoToPayWithQR = (): void => {
-        navigate('/service-qr-payment');
+        navigate('/service-qr-payment', { replace: true });
     };
 
     const handleGoBack = (): void => {

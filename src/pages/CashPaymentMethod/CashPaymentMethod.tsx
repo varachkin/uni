@@ -34,7 +34,7 @@ export default function CashPaymentMethod() {
       setIsLoading(true)
     }, 4000)
     setTimeout(() => {
-      navigate('/service-rejected')
+      navigate('/service-rejected', { replace: true })
     }, 9000)
 
   }, [])
