@@ -207,6 +207,20 @@ export const InputWithKeyboard: React.FC<InputWithKeyboardProps> = ({
   }, [keyboardOpen]);
 
   useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Enter") {
+        submit(); // Trigger the button's action when Enter is pressed
+      }
+    };
+  
+    document.addEventListener("keydown", handleKeyDown);
+  
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [input, inputName]);
+
+  useEffect(() => {
     if (defaultValue) {
       setInput((prev) => ({ ...prev, [id]: defaultValue }));
       keyboardRef.current.setInput(defaultValue)
