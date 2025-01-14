@@ -181,7 +181,7 @@
 }
 
 .swiper-card-img-block > div{
-    margin: 10%;
+    margin: 5%;
     height: 100%;
     width: 100%;
     background-size: contain;
@@ -198,13 +198,12 @@
     position: absolute;
     width: 105%;
     bottom: 0;
-    padding: 1.5vh;
+    padding: 0.85vh;
     z-index: 9;
     background: var(--error-gradient);
     color: white;
-    font-size: 4.5vw;
+    font-size: 3vh;
     opacity: 1;
-    border-radius: 0.5rem;
     text-align: center;
     font-weight: 400;
 }

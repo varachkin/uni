@@ -24,9 +24,7 @@ export default function EmailConfirmation(): JSX.Element {
     const onIdle = useLogoutHook();
     const start = useStartHook()
 
-
     const handleSubmit = (): void => {
-        // Placeholder for submission logic
         setIsLoading(true)
         setIsAlert('rejected');
         setTimeout(() => {
@@ -79,7 +77,7 @@ export default function EmailConfirmation(): JSX.Element {
                 )}
                 <div className="service-page-container">
                     <div>
-                        <Envelop />
+                        <Envelop text={languageConfig[language]?.EMAIL_CONFIRMATION_PAGE?.EMAIL_CONFIRMATION}/>
                     </div>
                     <InputWithKeyboard
                         placeholder={languageConfig[language].EMAIL_CONFIRMATION_PAGE.EMAIL}

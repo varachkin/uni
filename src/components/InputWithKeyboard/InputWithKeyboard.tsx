@@ -137,13 +137,11 @@ export const InputWithKeyboard: React.FC<InputWithKeyboardProps> = ({
   const submit = () => {
     if(validate){
       if (handleSubmit && input[id]) {
-        console.log('submit', input[id])
         validate(input[id]) && handleSubmit(input[id] || "");
       }
     }else{
       handleSubmit && input[id] && handleSubmit(input[id])
     }
-    console.log(input[id])
  
     if (autoClear) setTimeout(clearScreen, 100);
     setKeyboardOpen(false);

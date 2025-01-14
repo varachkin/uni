@@ -1,4 +1,8 @@
-export const Envelop = () => {
+interface IEnvelopProps {
+    text?: string
+}
+
+export const Envelop = ({text}: IEnvelopProps) => {
     return (
         <div className="letter-image">
             <div className="animated-mail">
@@ -8,7 +12,7 @@ export const Envelop = () => {
                     <div className="letter-title"></div>
                     <div className="letter-context"></div>
                     <div className="letter-context-body">
-                        <p>E-mail confirmation.......................................................................................</p>
+                        <p>{text}</p>
                     </div>
                     <div className="letter-stamp">
                         <div className="letter-stamp-inner"></div>

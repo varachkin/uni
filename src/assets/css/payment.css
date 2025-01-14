@@ -28,10 +28,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.199);
+    background-color: #00000008;
     border-radius: 10vh;
     border: 3px solid rgba(0, 0, 0, 0.13);
-    box-shadow: 8px 8px 24px -11px rgba(66, 68, 90, 1);
+    box-shadow: 11px 7px 33px -5px #080919, inset 11px 7px 33px -5px #9c9c9c7d;
 }
 
 .payment-method-wrapper .service-page-subtitle {

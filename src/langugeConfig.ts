@@ -148,6 +148,7 @@ export const languageConfig: LangConfigTranslations = {
             SUBTITLE: 'Maszyna jest w trakcie realizacji u innego klienta. Jesteś w kolejce.',
         },
         EMAIL_CONFIRMATION_PAGE: {
+            EMAIL_CONFIRMATION: 'Potwierdzenie e-mailem...',
             EMAIL: 'E-mail',
             SEND: 'WYSŁAĆ',
             TITLE: 'Aby otrzymać e-mail potwierdzenie',
@@ -303,6 +304,7 @@ export const languageConfig: LangConfigTranslations = {
             SUBTITLE: 'The machine is serving another customer. You are in queue.'
         },
         EMAIL_CONFIRMATION_PAGE: {
+            EMAIL_CONFIRMATION: 'Email confirmation...',
             EMAIL: 'E-mail',
             SEND: 'Send',
             TITLE: 'To receive an email confirmation',
