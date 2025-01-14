@@ -10,6 +10,7 @@ import ServicePageWrapper from "../ServicePageWrapper/ServicePageWrapper";
 import useStartHook from "../../hooks/useStartHook";
 import { ListStatusProducts } from "../../components/ListStatusProducts/ListStatusProducts";
 import { TouchScreenList } from "../../components/TouchScreenList/TouchScreenList";
+import withBlockBackBehavior from "../../withBlockBackBehavior";
 
 // Define the types for the location.state
 interface Product {
@@ -75,7 +76,7 @@ const fakeSuccess = [{
     }
 }]
 
-export default function SuccessPage() {
+function SuccessPage() {
     const { language, emailConfirmation } = useSelector((state: RootState) => state.configurationReducer);
     const navigate = useNavigate();
     const location = useLocation();
@@ -148,3 +149,5 @@ export default function SuccessPage() {
         </ServicePageWrapper>
     );
 }
+ 
+export default withBlockBackBehavior(SuccessPage)

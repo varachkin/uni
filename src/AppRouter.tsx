@@ -1,5 +1,5 @@
 import {Wrapper} from "./pages/Wrapper/Wrapper";
-import {ReactNode, useEffect} from "react";
+import {ReactNode} from "react";
 import {StartPage} from "./pages/StartPage/StartPage";
 import HomePage from "./pages/HomePage/HomePage";
 import ErrorBoundary from "./ErrorBoundary";
@@ -24,21 +24,6 @@ interface AppRouterProps {
 }
 
 export default function AppRouter(props: AppRouterProps | null) {
-    
-    useEffect(() => {
-        const blockBackNavigation = () => {
-          window.history.pushState(null, "", window.location.href);
-        };
-    
-        // Push a new state to prevent back navigation
-        blockBackNavigation();
-    
-        window.addEventListener("popstate", blockBackNavigation);
-    
-        return () => {
-          window.removeEventListener("popstate", blockBackNavigation);
-        };
-      }, []);
 
     return (
         <BrowserRouter future={{ v7_startTransition: true }}>
