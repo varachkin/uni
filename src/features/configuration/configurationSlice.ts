@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { IactionGlobalStateConfigurationMachine } from "../../interfaces";
 
 const initialState: IactionGlobalStateConfigurationMachine = {
-  isMobileDevice: true,
+  isMobileDevice: false,
   language: "pl",
   // serial: null,
   serial: 'EXA01-01-01',
@@ -14,7 +14,7 @@ const initialState: IactionGlobalStateConfigurationMachine = {
   QRCodeMode: true,
   animatedQR: true,
   employeeMode: true,
-  mobileAppMode: false,
+  mobileAppMode: true,
   discountCodeMode: true,
   discountCodeValue: "",
   terminal_preauthorization_payment: true,

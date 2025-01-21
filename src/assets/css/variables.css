@@ -8,7 +8,7 @@
     --warning-gradient: linear-gradient(45deg, #331a05,#ff9253, #331605);
     --success-gradient: linear-gradient(45deg, #053318,#0a8328, #053314);
     --error-gradient: linear-gradient(45deg, #1f0f0f, #941010, #330505);
-    --default-gradient: linear-gradient(45deg, #010a2e, #0c1647, #183a84, #020241);
+    --default-gradient: linear-gradient(45deg, #00051b, #071144, #032c85, #00001b);
     --default-gradient-radial: radial-gradient(#1b2e75, #102754, #0e2558 150%);
     --radial-card-bg-error: linear-gradient(to right, #870000bb, #1f0909b9);
     --card-bg-opacity-white: #c9c9c9a2;

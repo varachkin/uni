@@ -24,7 +24,6 @@ export const AnimatedQRCode = ({ url }: AnimatedQRCodeProps) => {
         const qrConfigInterval = setInterval(() => {
             card?.classList.toggle('is-flipped');
         }, 15000);
-
         // Cleanup the interval on component unmount
         return () => clearInterval(qrConfigInterval);
     }, []);
@@ -45,7 +44,6 @@ export const AnimatedQRCode = ({ url }: AnimatedQRCodeProps) => {
                             height: '30vh',
                             width: '30vh',
                             aspectRatio: '1/1',
-                            padding: '0.75vh',
                             boxShadow: `rgba(20, 22, 22, 0) 0px 2px 4px 0px, #d3e7f024 0px 2px 16px 0px`
                         }}
                         bgColor={configQR.default.bgColor}
@@ -74,7 +72,6 @@ export const AnimatedQRCode = ({ url }: AnimatedQRCodeProps) => {
                             height: '30vh',
                             width: '30vh',
                             aspectRatio: '1/1',
-                            padding: '0.75vh',
                             boxShadow: `rgba(0, 0, 0, 0) 0px 2px 4px 0px,rgba(0, 0, 0, 0.14) 0px 2px 16px 0px`
                         }}
                         bgColor={configQR.reverse.bgColor}
@@ -91,6 +88,5 @@ export const AnimatedQRCode = ({ url }: AnimatedQRCodeProps) => {
                     /></div>
             </div>
         </div>
-
     )
 }

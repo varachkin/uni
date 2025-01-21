@@ -22,6 +22,7 @@ interface HomePageProps {
 export default function HomePage({ children }: HomePageProps): JSX.Element {
   const [isShowModal, setIsShowModal] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isButtonLoading, setIsButtonLoading] = useState<boolean>(false);
   const [isLoaded, setIsLoaded] = useState<boolean | null>(false);
   const [modalProductID, setModalProductID] = useState<string | null>(null);
 
@@ -70,24 +71,31 @@ export default function HomePage({ children }: HomePageProps): JSX.Element {
   }
 
   const handleGetProducts = () => {
-    getProducts(serial)
-      .then((response: any) => {
-        if (response.status === 200) {
-          dispatch(setProducts(response.data.products));
-          setIsLoaded(true);
-        } else {
-          // setIsLoaded(false);
-          handleLoadFakeProducts()
-        }
-      })
-      .catch(() => {
-        handleLoadFakeProducts()
-        // setIsLoaded(false)
-      })
-      .finally(() => setIsLoading(false));
+    setIsButtonLoading(true)
+    setTimeout(() => {
+      getProducts(serial)
+        .then((response: any) => {
+          if (response.status === 200) {
+            dispatch(setProducts(response.data.products));
+            setIsLoaded(true);
+          } else {
+            // setIsLoaded(false);
+            handleLoadFakeProducts()
+          }
+        })
+        .catch(() => {
+          
+          // setIsLoaded(false)
+        })
+        .finally(() => {
+          setIsButtonLoading(false)
+          setIsLoading(false)
+        })
+    }, 500)
   };
 
   useEffect(() => {
+    handleLoadFakeProducts()
     setIsLoading(true);
     if (serial) {
       handleGetProducts();
@@ -106,7 +114,7 @@ export default function HomePage({ children }: HomePageProps): JSX.Element {
               <Loader size={15} />
             </div>
           ) : isLoaded ? (
-            products.length ? (
+            products && products?.length ? (
               <SwiperCube
                 products={products}
                 handleOpenModal={handleOpenModal}
@@ -132,11 +140,11 @@ export default function HomePage({ children }: HomePageProps): JSX.Element {
               <div className="btn-container">
                 <Button
                   onClick={handleGetProducts}
-                  className={isLoading ? "disabled" : ""}
-                  disabled={isLoading}
+                  className={isButtonLoading ? "disabled" : ""}
+                  disabled={isButtonLoading}
                 >
                   {languageConfig[language].BUTTONS.REPEAT}{" "}
-                  {isLoading ? <Loader /> : <BsArrowRepeat />}
+                  {isButtonLoading ? <Loader /> : <BsArrowRepeat />}
                 </Button>
               </div>
             </div>

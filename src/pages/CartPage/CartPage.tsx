@@ -159,7 +159,22 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
             ) : hasCart ?
               <div className="cart-page-list-wrapper">
                 <div className="cart-page-list">
-                  {isLoaded ? (
+                  {isLoaded === false ? (
+                    <div className="cart-btn-container">
+                      <AnimatedTitle
+                        title={languageConfig[language].SERVICE_PAGE.ERROR?.toUpperCase()}
+                        subTitle={languageConfig[language].SERVICE_PAGE.NO_PRODUCTS}
+                      />
+                      <Button
+                        onClick={handleGetProducts}
+                        className={isLoading ? "disabled" : ""}
+                        disabled={isLoading}
+                      >
+                        {languageConfig[language].BUTTONS.REPEAT}{" "}
+                        {isLoading ? <Loader /> : <BsArrowRepeat />}{" "}
+                      </Button>
+                    </div>
+                  ) : (
                     <>
                       <div className="title">{languageConfig[language].CART_PAGE.TITLE}</div>
                       <div style={{ height: `${discountCodeMode ? '61vh' : '70vh'}` }}>
@@ -177,21 +192,6 @@ export default function CartPage({ }: CartPageProps): JSX.Element {
                       </div>
                     </>
 
-                  ) : (
-                    <div className="cart-btn-container">
-                      <AnimatedTitle
-                        title={languageConfig[language].SERVICE_PAGE.ERROR?.toUpperCase()}
-                        subTitle={languageConfig[language].SERVICE_PAGE.NO_PRODUCTS}
-                      />
-                      <Button
-                        onClick={handleGetProducts}
-                        className={isLoading ? "disabled" : ""}
-                        disabled={isLoading}
-                      >
-                        {languageConfig[language].BUTTONS.REPEAT}{" "}
-                        {isLoading ? <Loader /> : <BsArrowRepeat />}{" "}
-                      </Button>
-                    </div>
                   )}
                 </div>
                 <div>

@@ -1,7 +1,6 @@
 .scene {
     width: 60%;
     aspect-ratio: 1/1;
-    margin: 40px 0;
     perspective: 600px;
   }
   

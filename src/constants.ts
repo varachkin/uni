@@ -272,4 +272,4 @@ export const hardCodeProducts = [
   }
 ]
 
-// export const hardCodeProducts = []
+// export const hardCodeProducts = null
