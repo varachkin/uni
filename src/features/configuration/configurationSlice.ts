@@ -6,7 +6,7 @@ const initialState: IactionGlobalStateConfigurationMachine = {
   language: "pl",
   // serial: null,
   serial: 'EXA01-01-01',
-  hasCart: false,
+  hasCart: true,
   emailConfirmation: true,
   isCheckingTechBreak: false,
   technical_break: false,

@@ -1,13 +1,8 @@
-import { useNavigate } from "react-router";
 import ServicePageWrapper from "./pages/ServicePageWrapper/ServicePageWrapper";
+import useStartHook from "./hooks/useStartHook";
 
 export const NotFoundPage = () => {
-    const navigate = useNavigate();
-
-    const handleBack = () => {
-        navigate("/");
-    };
-
+    const start= useStartHook()
 
     return (
         <ServicePageWrapper className="error">
@@ -16,7 +11,7 @@ export const NotFoundPage = () => {
                     <div className="notFound-page-title" title="404">404</div>
                     <h4 className="notFound-page-subtitle">Page not found</h4>
                 </div>
-                <button className="notFound-page-button" onClick={handleBack}>
+                <button className="notFound-page-button" onClick={start}>
                     TO START
                 </button>
             </div>

@@ -7,7 +7,7 @@ export default function useStartHook() {
   const dispatch = useDispatch();
   const onIdle = () => {
     dispatch(clearCart())
-    navigate("/", { replace: true });
+    navigate("/");
   };
   
   return onIdle;

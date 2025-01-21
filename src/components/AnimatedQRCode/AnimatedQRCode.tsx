@@ -11,16 +11,12 @@ export const AnimatedQRCode = ({ url }: AnimatedQRCodeProps) => {
     const { animatedQR } = useSelector((state: RootState) => state.configurationReducer)
     const configQR = {
         default: {
-            bgColor: "#0e0e0e",
-            fgColor: "#a0a0a0",
-            shadow_1: '#d3e7f000',
-            shadow_2: '#d3e7f082',
+            bgColor: "#807e7e",
+            fgColor: "#050505",
         },
         reverse: {
             bgColor: "#a0a0a0",
             fgColor: "#0e0e0e",
-            shadow_1: '#1d202255',
-            shadow_2: '#1d202282',
         }
     }
     useEffect(() => {
@@ -40,15 +36,17 @@ export const AnimatedQRCode = ({ url }: AnimatedQRCodeProps) => {
                     <QRCode
                         value={url}
                         logoImage={''}
-                        size={400}
+                        // size={420}
                         logoHeight={75}
                         logoWidth={75}
                         style={{
                             backgroundColor: configQR.default.bgColor,
                             borderRadius: "1rem",
+                            height: '30vh',
+                            width: '30vh',
                             aspectRatio: '1/1',
-                            padding: '0.5vh',
-                            boxShadow: `${configQR.default.shadow_1} 0px 2px 4px 0px, ${configQR.default.shadow_2} 0px 2px 16px 0px`
+                            padding: '0.75vh',
+                            boxShadow: `rgba(20, 22, 22, 0) 0px 2px 4px 0px, #d3e7f024 0px 2px 16px 0px`
                         }}
                         bgColor={configQR.default.bgColor}
                         fgColor={configQR.default.fgColor}
@@ -67,15 +65,17 @@ export const AnimatedQRCode = ({ url }: AnimatedQRCodeProps) => {
                     <QRCode
                         value={url}
                         logoImage={''}
-                        size={360}
+                        // size={420}
                         logoHeight={75}
                         logoWidth={75}
                         style={{
                             backgroundColor: configQR.reverse.bgColor,
                             borderRadius: "1rem",
+                            height: '30vh',
+                            width: '30vh',
                             aspectRatio: '1/1',
-                            padding: '0.5vh',
-                            boxShadow: `${configQR.reverse.shadow_1} 0px 2px 4px 0px, ${configQR.reverse.shadow_2} 0px 2px 16px 0px`
+                            padding: '0.75vh',
+                            boxShadow: `rgba(0, 0, 0, 0) 0px 2px 4px 0px,rgba(0, 0, 0, 0.14) 0px 2px 16px 0px`
                         }}
                         bgColor={configQR.reverse.bgColor}
                         fgColor={configQR.reverse.fgColor}

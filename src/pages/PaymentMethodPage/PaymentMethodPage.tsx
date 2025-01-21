@@ -23,15 +23,15 @@ export default function PaymentMethodPage(): JSX.Element {
     const { language, QRCodeMode, employeeMode, clientTimeoutIdle, hasCart, isMobileDevice } = useSelector((state: RootState) => state.configurationReducer);
 
     const handleGoToPayWithCash = (): void => {
-        navigate('/service-cash-payment', { replace: true });
+        navigate('/service-cash-payment');
     };
 
     const handleGoToPayWithCard = (): void => {
-        navigate('/service-card-payment', { replace: true });
+        navigate('/service-card-payment');
     };
 
     const handleGoToPayWithQR = (): void => {
-        navigate('/service-qr-payment', { replace: true });
+        navigate('/service-qr-payment');
     };
 
     const handleGoBack = (): void => {
@@ -94,7 +94,7 @@ export default function PaymentMethodPage(): JSX.Element {
                                 <div className="payment-method-block">
                                     <img src={cardImg} alt="card" />
                                 </div>
-                                <div className="service-page-subtitle">{languageConfig[language].PAYMENT_PAGE.CARD}</div>
+                                <div className="service-page-subtitle shine">{languageConfig[language].PAYMENT_PAGE.CARD}</div>
                             </div>
 
                             {QRCodeMode && (
@@ -102,7 +102,7 @@ export default function PaymentMethodPage(): JSX.Element {
                                     <div className="payment-method-block">
                                         <img src={QRImg} alt="QR" />
                                     </div>
-                                    <div className="service-page-subtitle">{languageConfig[language].PAYMENT_PAGE.QR}</div>
+                                    <div className="service-page-subtitle shine">{languageConfig[language].PAYMENT_PAGE.QR}</div>
                                 </div>
                             )}
 
@@ -110,7 +110,7 @@ export default function PaymentMethodPage(): JSX.Element {
                                 <div className="payment-method-block">
                                     <img src={cashImg} alt="cash" />
                                 </div>
-                                <div className="service-page-subtitle">{languageConfig[language].PAYMENT_PAGE.CASH}</div>
+                                <div className="service-page-subtitle shine">{languageConfig[language].PAYMENT_PAGE.CASH}</div>
                             </div>
                         </div>
                     </TouchScreenList>

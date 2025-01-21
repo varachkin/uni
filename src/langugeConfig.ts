@@ -52,7 +52,7 @@ export const languageConfig: LangConfigTranslations = {
             CORRECT_ALL: 'POPRAW',
             YES: 'TAK',
             NO: 'NIE',
-
+            APPLY: 'ZASTOSUJ'
         },
         PAYMENT_PAGE: {
             EMPLOYEE_CARD_TITLE: "ZAPŁAĆ PUNKTAMI",
@@ -210,6 +210,7 @@ export const languageConfig: LangConfigTranslations = {
             CORRECT_ALL: 'CORRECT',
             YES: 'YES',
             NO: 'NO',
+            APPLY: 'APPLY'
         },
         PAYMENT_PAGE: {
             EMPLOYEE_CARD_TITLE: 'PAY WITH POINTS',

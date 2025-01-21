@@ -24,7 +24,6 @@ interface AppRouterProps {
 }
 
 export default function AppRouter(props: AppRouterProps | null) {
-
     return (
         <BrowserRouter future={{ v7_startTransition: true }}>
             <Wrapper>

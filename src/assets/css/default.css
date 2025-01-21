@@ -160,3 +160,35 @@ body {
     font-family: Russo, sans-serif;
     background: linear-gradient(89.7deg, rgb(0, 0, 0) -10.7%, rgb(16, 35, 51) 88.8%);
 }
+
+.shine {
+    position: relative;
+    color: #ffffff;
+    background: linear-gradient(270deg, #797979 0, white 1%, #808080 10%);
+    background-size: 190%;
+    background-position: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 10s infinite linear;
+    -webkit-text-size-adjust: none;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0vw
+    }
+    40% {
+        background-position: 0vw
+    }
+    60% {
+        background-position: 110vw
+    }
+    
+    100% {
+        background-position: 110vw
+    }
+}

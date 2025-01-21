@@ -25,7 +25,7 @@ export const Footer = () => {
         !!hasCart && (<footer className="footer">
             <div className="footer-info-block">
                 {!!cart?.length && (
-                    <div className="footer-info-block-row">
+                    <div className="footer-info-block-row shine">
                         <div>{languageConfig[language].FOOTER.TOTAL}</div>
                         <div>
                             {`${total.totalPrice.toFixed(2)} ${currency}`}
