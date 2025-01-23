@@ -17,19 +17,19 @@
 } */
 
 .product-confirmation-wrapper .swiper-card-wrapper .swiper-card-name{
-    font-size: 3.5vh;
+    font-size: 3.15vh;
 }
 
 .product-confirmation-wrapper .swiper-card-wrapper .swiper-card-description{
-    font-size: 4.75vh;
+    font-size: 4.15vh;
 }
 
 .product-confirmation-wrapper .swiper-card-wrapper .swiper-card-price-block .current-price{
-    font-size: 4.5vh;
+    font-size: 3.5vh;
 }
 
 .product-confirmation-wrapper .swiper-card-wrapper .swiper-card-price-block .old-price{
-    font-size: 6vw;
+    font-size: 2.75vh;
 }
 .product-confirmation-discount-field{
     width: 100%;

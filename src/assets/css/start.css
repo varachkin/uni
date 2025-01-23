@@ -138,12 +138,12 @@
 
 .start-page-icon .waves:before {
     opacity: 0;
-    animation: rippleStart 4s linear infinite;
+    animation: rippleStart 4s linear .24s infinite;
 }
 
 .start-page-icon .waves:after {
     opacity: 0;
-    animation: rippleStart 4s linear .28s infinite;
+    animation: rippleStart 4s linear .54s infinite;
 }
 
 .waves .finger-icon {
@@ -154,6 +154,7 @@
     background-image: url('./../img/finger.png');
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
     flex: 0;
     opacity: 0.7;
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1);

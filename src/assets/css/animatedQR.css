@@ -1,40 +1,166 @@
+:root {
+  --scan-height: 30vh;
+}
+
 .scene {
-    width: 60%;
-    aspect-ratio: 1/1;
-    perspective: 600px;
+  width: 60%;
+  aspect-ratio: 1/1;
+  perspective: 600px;
+  position: relative;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card.animated {
+  transition: transform 1s;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card__face--back {
+  transform: rotateY(180deg);
+}
+
+.scanning-wrapper{
+  position: fixed;
+  opacity: 0;
+  height: 30vh;
+  aspect-ratio: 1 / 1;
+  left: calc(58% - var(--scan-height) / 2);
+  top: calc(58% - var(--scan-height) / 2);
+  transform: scale(1);
+  animation: show_scanning 20s infinite 1.8s ease-in-out;
+  z-index: 999;
+}
+.scanning {
+  position: absolute;
+  background-image: url(/src/assets/img/scanning.png);
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 999;
+}
+
+.scanning-zoom{
+  background-color: rgba(129, 120, 211, 0.226);
+  position: absolute;
+  height: 54%;
+  width: 30%;
+  left: 22%;
+  top: 5%;
+  border-radius: 1vh;
+  z-index: 998;
+  backdrop-filter: blur(3px);
+}
+
+.scanning-detector{
+  position: absolute;
+  width: 100%;
+  height: 1%;
+  background-color: rgba(255, 0, 0, 0.418);
+  top: 5%;
+  animation: scan_detect 2s infinite ease-in-out;
+}
+
+@keyframes scan_detect {
+  from {
+    top: 5%
   }
-  
-  .card {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    cursor: pointer;
-    position: relative;
+  50% {
+    top: 85%
+  }
+  to {
+    top: 5%
+  }
+}
+
+@keyframes show_scanning {
+  from {
+    transform: scale(5);
+    opacity: 0;
+    left: calc(58% - var(--scan-height) / 2);
+    top: calc(58% - var(--scan-height) / 2);
+  }
+  5% {
+    transform: scale(1);
+    opacity: 1;
+    left: calc(58% - var(--scan-height) / 2);
+    top: calc(58% - var(--scan-height) / 2);
+  }
+  9% {
+    transform: scale(1);
+    opacity: 1;
+    left: calc(58% - var(--scan-height) / 2);
+    top: calc(58% - var(--scan-height) / 2 + 10%);
+  }
+  13% {
+    transform: scale(1);
+    left: calc(58% - var(--scan-height) / 2 - 30%);
+    top: calc(58% - var(--scan-height) / 2 + 10%);
+    opacity: 1;
+  }
+  17% {
+    transform: scale(1);
+    left: calc(58% - var(--scan-height) / 2 - 30%);
+    top: calc(58% - var(--scan-height) / 2 - 10%);
+    opacity: 1;
   }
 
-  .card.animated{
-    transition: transform 1s;
+  21% {
+    transform: scale(1);
+    left: calc(58% - var(--scan-height) / 2 + 30%);
+    top: calc(58% - var(--scan-height) / 2 - 10%);
+    opacity: 1;
   }
-  
-  .card.is-flipped {
-    transform: rotateY(180deg);
+
+  25% {
+    transform: scale(1);
+    left: calc(58% - var(--scan-height) / 2 + 30%);
+    top: calc(58% - var(--scan-height) / 2 + 10%);
+    opacity: 1;
   }
-  
-  .card__face {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    font-weight: bold;
-    font-size: 40px;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+
+  29% {
+    transform: scale(1.25);
+    left: calc(58% - var(--scan-height) / 2);
+    top: calc(58% - var(--scan-height) / 2);
+    opacity: 1;
   }
-  
-  .card__face--back {
-    transform: rotateY(180deg);
+
+  32% {
+    transform: scale(10);
+    opacity: 0;
+    left: calc(58% - var(--scan-height) / 2);
+    top: calc(58% - var(--scan-height) / 2);
   }
-  
+
+  to {
+    transform: scale(10);
+    left: calc(58% - var(--scan-height) / 2);
+    top: calc(58% - var(--scan-height) / 2);
+  }
+}
