@@ -20,6 +20,8 @@
 }
 
 .react-tabs__tab-panel--selected {
+    display: flex;
+    flex-direction: column;
     padding: 2.5vw;
 }
 
@@ -47,11 +49,17 @@
     flex: 1;
 }
 
-.terminal-settings-wrapper {
+.settings-page-wrapper {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     height: 100%;
+}
+.setting-tab-wrapper{
+    height: 75vh;
+}
+.setting-tab-wrapper .card-control-panel{
+    color: azure;
 }
 
 input[type=checkbox] {

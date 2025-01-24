@@ -20,7 +20,7 @@
 .login-page-wrapper h2, .settings-page-wrapper h2{
     font-size: 4vh;
     text-align: center;
-    padding: 6vw 0;
+    padding: 4vh 0;
 }
 
 .login-page-wrapper h3.error-subtitle, .settings-page-wrapper h3.error-subtitle{

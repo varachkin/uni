@@ -24,7 +24,7 @@ const initialState: IactionGlobalStateConfigurationMachine = {
   terminalTimeoutIdle: 6 * 10 * 1000,
   serviceTimeoutIdle: 4 * 60 * 1000,
   // languages: ['pl', 'en', 'de', 'fr', 'esp', 'be', 'ua', 'ita' ],
-    languages: ['pl', 'en'],
+  languages: ['pl', 'en'],
   currency: 'zł',
   swiperSettings: {
     effect: 'cube',

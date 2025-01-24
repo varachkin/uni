@@ -5,6 +5,7 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai"
 import type { RootState } from "../../store/store"
 import { changeSwiperEffect, changeSwiperLoop, decrementSwiperProductsPerSlide, incrementSwiperProductsPerSlide } from "../../features/configuration/configurationSlice"
 import { languageConfig } from "../../langugeConfig"
+import { TouchScreenList } from "../TouchScreenList/TouchScreenList"
 
 export const SwiperSettingsComponent = () => {
     const { swiperSettings, language } = useSelector((state: RootState) => state.configurationReducer)
@@ -17,11 +18,11 @@ export const SwiperSettingsComponent = () => {
     const handleChangeSwiperEffect = () => {
         swiperSettings.effect !== 'cube' ? dispatch(changeSwiperEffect('cube')) : dispatch(changeSwiperEffect('coverflow'))
     }
-    const handleInrement = ()=> {
+    const handleInrement = () => {
         dispatch(incrementSwiperProductsPerSlide())
     }
 
-    const handleDerement = ()=> {
+    const handleDerement = () => {
         dispatch(decrementSwiperProductsPerSlide())
     }
 
@@ -30,43 +31,44 @@ export const SwiperSettingsComponent = () => {
     }
 
     return (
-        <div className="terminal-settings-wrapper">
-            <section>
-                <h3 className="service-page-subtitle">Swiper effect</h3>
-                <div className="swich-wrapper">
-                    <span className={`${swiperSettings.effect !== 'cube' ? "" : "active-off"}`}>CUBE</span>
-                    <input
-                        type="checkbox"
-                        id="swiperEffect"
-                        onChange={handleChangeSwiperEffect}
-                        checked={swiperSettings.effect !== 'cube'}
-                    />
-                    <label htmlFor="swiperEffect">Toggle</label>
-                    <span className="active-on">CARD</span>
-                </div>
+        <div className="settings-page-wrapper">
+            <div className="setting-tab-wrapper">
+                <TouchScreenList>
+                    <section>
+                        <h3 className="service-page-subtitle">Swiper effect</h3>
+                        <div className="swich-wrapper">
+                            <span className={`${swiperSettings.effect !== 'cube' ? "" : "active-off"}`}>CUBE</span>
+                            <input
+                                type="checkbox"
+                                id="swiperEffect"
+                                onChange={handleChangeSwiperEffect}
+                                checked={swiperSettings.effect !== 'cube'}
+                            />
+                            <label htmlFor="swiperEffect">Toggle</label>
+                            <span className="active-on">CARD</span>
+                        </div>
 
-                <h3 className="service-page-subtitle">Infinity loop</h3>
-                <div className="swich-wrapper">
-                    <span className={`${swiperSettings.loop ? "" : "active-off"}`}>OFF</span>
-                    <input
-                        type="checkbox"
-                        id="swiperLoop"
-                        onChange={handleChangeSwiperLoop}
-                        checked={swiperSettings.loop}
-                    />
-                    <label htmlFor="swiperLoop">Toggle</label>
-                    <span className="active-on">ON</span>
-                </div>
-                <h3 className="service-page-subtitle">Max products per slide</h3>
-                <div className="card-control-panel" style={{width: '30vw', margin: '2vw auto', fontSize: '6vw', padding: '3vw'}}>
-                    <span onClick={handleDerement}>{swiperSettings.cardsPerSlide > 1 && <AiOutlineMinus />}</span>
-                    <div>{swiperSettings.cardsPerSlide}</div>
-                    <span onClick={handleInrement}>{swiperSettings.cardsPerSlide < 4 && <AiOutlinePlus />}</span>
-                </div>
-            </section>
-            <section>
-
-            </section>
+                        <h3 className="service-page-subtitle">Infinity loop</h3>
+                        <div className="swich-wrapper">
+                            <span className={`${swiperSettings.loop ? "" : "active-off"}`}>OFF</span>
+                            <input
+                                type="checkbox"
+                                id="swiperLoop"
+                                onChange={handleChangeSwiperLoop}
+                                checked={swiperSettings.loop}
+                            />
+                            <label htmlFor="swiperLoop">Toggle</label>
+                            <span className="active-on">ON</span>
+                        </div>
+                        <h3 className="service-page-subtitle">Max products per slide</h3>
+                        <div className="card-control-panel" style={{ width: '30vw', margin: '2vw auto', fontSize: '6vw', padding: '3vw' }}>
+                            <span onClick={handleDerement}>{swiperSettings.cardsPerSlide > 1 && <AiOutlineMinus />}</span>
+                            <div>{swiperSettings.cardsPerSlide}</div>
+                            <span onClick={handleInrement}>{swiperSettings.cardsPerSlide < 4 && <AiOutlinePlus />}</span>
+                        </div>
+                    </section>
+                </TouchScreenList>
+            </div>
             <section className="button-wrapper">
                 <ButtonCancel className="cancel" onClick={handleBack}>{languageConfig[language].BUTTONS.BACK}</ButtonCancel>
             </section>

@@ -13,6 +13,7 @@ import {
 import type { RootState } from "../../store/store";
 import { languageConfig } from "../../langugeConfig";
 import { Swicher } from "../Swicher/Swicher";
+import { TouchScreenList } from "../TouchScreenList/TouchScreenList";
 
 export const CommonSettingsComponent = () => {
   const dispatch = useDispatch();
@@ -53,37 +54,37 @@ export const CommonSettingsComponent = () => {
   };
 
   return (
-    <div className="terminal-settings-wrapper">
-      <div>
+    <div className="settings-page-wrapper">
+      <div className="setting-tab-wrapper">
+        <TouchScreenList>
+          <Swicher checked={hasCart} handleChange={handleChangeCartMode}>
+            <h3 className="service-page-subtitle">Cart mode</h3>
+          </Swicher>
 
-        <Swicher checked={hasCart} handleChange={handleChangeCartMode}>
-          <h3 className="service-page-subtitle">Cart mode</h3>
-        </Swicher>
+          <Swicher checked={emailConfirmation} handleChange={handleChangeEmailConfirmation}>
+            <h3 className="service-page-subtitle">Email confirmation</h3>
+          </Swicher>
 
-        <Swicher checked={emailConfirmation} handleChange={handleChangeEmailConfirmation}>
-          <h3 className="service-page-subtitle">Email confirmation</h3>
-        </Swicher>
+          <Swicher checked={QRCodeMode} handleChange={handleChangeQrPay}>
+            <h3 className="service-page-subtitle">PAY with QR</h3>
+          </Swicher>
 
-        <Swicher checked={QRCodeMode} handleChange={handleChangeQrPay}>
-          <h3 className="service-page-subtitle">PAY with QR</h3>
-        </Swicher>
+          <Swicher checked={employeeMode} handleChange={handleChangeEmployeePay}>
+            <h3 className="service-page-subtitle">PAY with EMPLOYEE CARD</h3>
+          </Swicher>
 
-        <Swicher checked={employeeMode} handleChange={handleChangeEmployeePay}>
-          <h3 className="service-page-subtitle">PAY with EMPLOYEE CARD</h3>
-        </Swicher>
+          <Swicher checked={mobileAppMode} handleChange={handleChangeMobileApp}>
+            <h3 className="service-page-subtitle">Mobile APP <br />(QR Code on start page)</h3>
+          </Swicher>
 
-        <Swicher checked={mobileAppMode} handleChange={handleChangeMobileApp}>
-        <h3 className="service-page-subtitle">Mobile APP <br />(QR Code on start page)</h3>
-        </Swicher>
+          <Swicher checked={animatedQR} handleChange={handleChangeAnimateQR}>
+            <h3 className="service-page-subtitle">Animate QR on start page</h3>
+          </Swicher>
 
-        <Swicher checked={animatedQR} handleChange={handleChangeAnimateQR}>
-        <h3 className="service-page-subtitle">Animate QR on start page</h3>
-        </Swicher>
-
-        <Swicher checked={discountCodeMode} handleChange={handleChangeDiscontMode}>
-        <h3 className="service-page-subtitle">Discount code</h3>
-        </Swicher>
-
+          <Swicher checked={discountCodeMode} handleChange={handleChangeDiscontMode}>
+            <h3 className="service-page-subtitle">Discount code</h3>
+          </Swicher>
+        </TouchScreenList>
       </div>
       <section className="button-wrapper">
         <ButtonCancel className="cancel" onClick={handleBack}>
