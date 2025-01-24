@@ -1,20 +1,14 @@
-import { ButtonCancel } from "../ButtonCancel/ButtonCancel"
 import { useDispatch, useSelector } from "react-redux"
-import { useNavigate } from "react-router-dom"
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai"
 import type { RootState } from "../../store/store"
 import { changeSwiperEffect, changeSwiperLoop, decrementSwiperProductsPerSlide, incrementSwiperProductsPerSlide } from "../../features/configuration/configurationSlice"
-import { languageConfig } from "../../langugeConfig"
 import { TouchScreenList } from "../TouchScreenList/TouchScreenList"
 
 export const SwiperSettingsComponent = () => {
-    const { swiperSettings, language } = useSelector((state: RootState) => state.configurationReducer)
+    const { swiperSettings } = useSelector((state: RootState) => state.configurationReducer)
     const dispatch = useDispatch()
-    const navigate = useNavigate()
 
-    const handleBack = () => {
-        navigate('/')
-    }
+
     const handleChangeSwiperEffect = () => {
         swiperSettings.effect !== 'cube' ? dispatch(changeSwiperEffect('cube')) : dispatch(changeSwiperEffect('coverflow'))
     }
@@ -31,7 +25,7 @@ export const SwiperSettingsComponent = () => {
     }
 
     return (
-        <div className="settings-page-wrapper">
+        <>
             <div className="setting-tab-wrapper">
                 <TouchScreenList>
                     <section>
@@ -69,9 +63,6 @@ export const SwiperSettingsComponent = () => {
                     </section>
                 </TouchScreenList>
             </div>
-            <section className="button-wrapper">
-                <ButtonCancel className="cancel" onClick={handleBack}>{languageConfig[language].BUTTONS.BACK}</ButtonCancel>
-            </section>
-        </div>
+        </>
     )
 }

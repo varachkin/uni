@@ -1,6 +1,4 @@
-import { ButtonCancel } from "../ButtonCancel/ButtonCancel";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import {
   changeAnimatedQR,
   changeCartMode,
@@ -11,19 +9,13 @@ import {
   changeQRCodeMode
 } from "../../features/configuration/configurationSlice";
 import type { RootState } from "../../store/store";
-import { languageConfig } from "../../langugeConfig";
 import { Swicher } from "../Swicher/Swicher";
 import { TouchScreenList } from "../TouchScreenList/TouchScreenList";
 
 export const CommonSettingsComponent = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
-  const handleBack = () => {
-    navigate("/");
-  };
-
-  const { QRCodeMode, employeeMode, mobileAppMode, discountCodeMode, animatedQR, language, hasCart, emailConfirmation } = useSelector((state: RootState) => state.configurationReducer);
+  const { QRCodeMode, employeeMode, mobileAppMode, discountCodeMode, animatedQR, hasCart, emailConfirmation } = useSelector((state: RootState) => state.configurationReducer);
 
   const handleChangeQrPay = () => {
     dispatch(changeQRCodeMode());
@@ -54,7 +46,8 @@ export const CommonSettingsComponent = () => {
   };
 
   return (
-    <div className="settings-page-wrapper">
+    <>
+
       <div className="setting-tab-wrapper">
         <TouchScreenList>
           <Swicher checked={hasCart} handleChange={handleChangeCartMode}>
@@ -86,11 +79,6 @@ export const CommonSettingsComponent = () => {
           </Swicher>
         </TouchScreenList>
       </div>
-      <section className="button-wrapper">
-        <ButtonCancel className="cancel" onClick={handleBack}>
-          {languageConfig[language].BUTTONS.BACK}
-        </ButtonCancel>
-      </section>
-    </div>
+    </>
   );
 };

@@ -1,20 +1,12 @@
-import { ButtonCancel } from "../ButtonCancel/ButtonCancel"
-import { useNavigate } from "react-router-dom"
 import { useSelector } from "react-redux"
 import type { RootState } from "../../store/store"
-import { languageConfig } from "../../langugeConfig"
 import { TouchScreenList } from "../TouchScreenList/TouchScreenList"
 
 export const AboutDeviceComponent = () => {
-    const { language, serial } = useSelector((state: RootState) => state.configurationReducer)
-    const navigate = useNavigate()
-
-    const handleBack = () => {
-        navigate('/')
-    }
+    const { serial } = useSelector((state: RootState) => state.configurationReducer)
 
     return (
-        <div className="settings-page-wrapper">
+        <>
             <div className="setting-tab-wrapper">
                 <TouchScreenList>
                     <h2 className='title'>About device</h2>
@@ -26,9 +18,7 @@ export const AboutDeviceComponent = () => {
                     </section>
                 </TouchScreenList>
             </div>
-            <section className="button-wrapper">
-                <ButtonCancel className="cancel" onClick={handleBack}>{languageConfig[language].BUTTONS.BACK}</ButtonCancel>
-            </section>
-        </div>
+            
+        </>
     )
 }

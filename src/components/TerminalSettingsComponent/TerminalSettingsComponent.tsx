@@ -1,27 +1,21 @@
-import { ButtonCancel } from "../ButtonCancel/ButtonCancel"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { Button } from "../Button/Button"
 import { changePreAuthorizationTerminal } from "../../features/configuration/configurationSlice"
 import type { RootState } from "../../store/store"
-import { languageConfig } from "../../langugeConfig"
 import { TouchScreenList } from "../TouchScreenList/TouchScreenList"
 
 export const TerminalSettingsComponent = () => {
-    const { language, terminal_preauthorization_payment } = useSelector((state: RootState) => state.configurationReducer)
+    const { terminal_preauthorization_payment } = useSelector((state: RootState) => state.configurationReducer)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-
-    const handleBack = () => {
-        navigate('/')
-    }
 
     const handleChangePreauthorization = () => {
         dispatch(changePreAuthorizationTerminal())
     }
 
     return (
-        <div className="settings-page-wrapper">
+        <>
             <div className="setting-tab-wrapper">
                 <TouchScreenList>
                     <section>
@@ -65,11 +59,7 @@ export const TerminalSettingsComponent = () => {
                         <Button onClick={() => navigate('/cart')}>cart</Button>
                     </section>
                 </TouchScreenList>
-
             </div>
-            <section className="button-wrapper">
-                <ButtonCancel className="cancel" onClick={handleBack}>{languageConfig[language].BUTTONS.BACK}</ButtonCancel>
-            </section>
-        </div>
+        </>
     )
 }

@@ -8,9 +8,17 @@ import { TerminalSettingsComponent } from '../../components/TerminalSettingsComp
 import { SwiperSettingsComponent } from '../../components/SwiperSettingsComponent/SwiperSettingsComponent';
 import { AboutDeviceComponent } from '../../components/AboutDeviceComponent/AboutDeviceComponent';
 import ServicePageWrapper from '../ServicePageWrapper/ServicePageWrapper';
+import { ButtonCancel } from '../../components/ButtonCancel/ButtonCancel';
+import { useNavigate } from 'react-router-dom';
 
 export const ServiceMenuPage = () => {
   const { language } = useSelector((state: RootState) => state.configurationReducer)
+  const navigate = useNavigate()
+
+  const handleBack = () => {
+    navigate('/')
+  }
+  
   return (
     <ServicePageWrapper>
       <div className="settings-page-background">
@@ -37,6 +45,9 @@ export const ServiceMenuPage = () => {
             </TabPanel>
           </Tabs>
         </div>
+        <section className="button-wrapper">
+          <ButtonCancel className="cancel" onClick={handleBack}>{languageConfig[language].BUTTONS.BACK}</ButtonCancel>
+        </section>
       </div>
     </ServicePageWrapper>
 
