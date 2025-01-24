@@ -18,13 +18,14 @@
     align-items: center;
     justify-content: center;
     padding: 3vw;
-    gap: 3vh;
+    gap: 1.5vh;
     flex: 1;
 }
 
 .payment-method-wrapper {
     width: 70vw;
-    min-height: 15vh;
+    min-height: 12vh;
+    gap: 5vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -38,8 +39,14 @@
     color: white;
     margin: 0;
     text-align: start;
-    width: 100%;
     flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-right: 4vw;
 }
 
 .payment-method-block {
@@ -47,10 +54,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 50%;
+    max-width: 33%;
     border-radius: 50%;
+    margin-left: 4vw;
 }
 
 .payment-method-block img {
-    width: 70%;
+    width: 100%;
 }

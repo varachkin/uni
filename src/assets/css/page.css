@@ -141,6 +141,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .service-page-img-block-employee {

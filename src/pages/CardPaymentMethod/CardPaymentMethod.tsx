@@ -1,4 +1,3 @@
-import terminalImg from "./../../assets/img/terminal.webp";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
@@ -8,6 +7,7 @@ import Loader from "../../components/Loader/Loader";
 import type { RootState } from "../../store/store";
 import ServicePageWrapper from "../ServicePageWrapper/ServicePageWrapper";
 import { useNavigate } from "react-router-dom";
+import { CreditCard } from "../../components/CreditCard/CreditCard";
 
 export default function CardPaymentMethod() {
 
@@ -16,8 +16,11 @@ export default function CardPaymentMethod() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    setTimeout(() => setIsCardAccepted(true), 4000)
-    setTimeout(() => navigate('/service-success'), 9000)
+    if(true){
+      setTimeout(() => setIsCardAccepted(true), 4000)
+      setTimeout(() => navigate('/service-success'), 9000)
+    }
+    
   }, [])
 
 
@@ -27,7 +30,7 @@ export default function CardPaymentMethod() {
         <div className="service-page-container">
           {!isCardAccepted ? (
             <div className="service-page-img-block">
-              <img src={terminalImg} alt="terminal" />
+              <CreditCard />
             </div>
           ) : (
             <Loader size={15} />

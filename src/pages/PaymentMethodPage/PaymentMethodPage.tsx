@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { TbCircleArrowLeftFilled } from "react-icons/tb";
 import cashImg from './../../assets/img/cash-method.webp';
 import cardImg from './../../assets/img/card-method.webp';
+import employeeImg from './../../assets/img/employee-card.webp';
 // import blikImg from './../../assets/img/blik-method.webp';
 import QRImg from './../../assets/img/QR-method.webp';
 import { useEffect, useRef, useState } from "react";
@@ -103,6 +104,14 @@ export default function PaymentMethodPage(): JSX.Element {
                                         <img src={QRImg} alt="QR" />
                                     </div>
                                     <div className="service-page-subtitle shine">{languageConfig[language].PAYMENT_PAGE.QR}</div>
+                                </div>
+                            )}
+                             {employeeMode && !isMobileDevice &&(
+                                <div className="payment-method-wrapper" onClick={handleGoToPayWithQR}>
+                                    <div className="payment-method-block">
+                                        <img src={employeeImg} alt="QR" />
+                                    </div>
+                                    <div className="service-page-subtitle shine">{languageConfig[language].PAYMENT_PAGE.EMPLOYEE_CARD}</div>
                                 </div>
                             )}
 

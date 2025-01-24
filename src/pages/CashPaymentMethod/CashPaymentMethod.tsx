@@ -1,4 +1,4 @@
-import cashImg from "./../../assets/img/cash.webp";
+// import cashImg from "./../../assets/img/cash.webp";
 import { FaMinusCircle } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
@@ -9,6 +9,7 @@ import { AnimatedTitle } from "../../components/AnimatedTitle/AnimatedTitle";
 import ServicePageWrapper from "../ServicePageWrapper/ServicePageWrapper";
 import { Button } from "../../components/Button/Button";
 import { useNavigate } from "react-router-dom";
+import { Coin } from "../../components/Coin/Coin";
 
 export default function CashPaymentMethod() {
   const [credit, setCredit] = useState<any>(null);
@@ -44,7 +45,9 @@ export default function CashPaymentMethod() {
         <div className="service-page-container">
           <div className="service-page-img-block">
             {!isCashAccepted ? (
-              <img src={cashImg} alt="terminal" />
+              // <img src={cashImg} alt="terminal" />
+              <Coin />
+             
             ) : (
               <Loader size={15} />
             )}

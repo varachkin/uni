@@ -165,7 +165,7 @@ body {
     position: relative;
     color: #ffffff;
     background: linear-gradient(to right, #7979799c 0, white 1%, #b0b0b0 10%);
-    background-size: 190%;
+    background-size: 330%;
     background-position: 0vw;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -174,21 +174,20 @@ body {
     font-weight: 600;
     font-size: 16px;
     text-decoration: none;
-    white-space: nowrap;
 }
 
 @keyframes shine {
     0% {
-        background-position: -12vw
+        background-position: -20vw
     }
     40% {
-        background-position: -12vw
+        background-position: -20vw
     }
     60% {
-        background-position: 110vw
+        background-position: 150vw
     }
     
     100% {
-        background-position: 110vw
+        background-position: 150vw
     }
 }
