@@ -47,12 +47,10 @@ export default function CashPaymentMethod() {
             {!isCashAccepted ? (
               // <img src={cashImg} alt="terminal" />
               <Coin />
-             
             ) : (
               <Loader size={15} />
             )}
           </div>
-
           {isCashAccepted ? (
             <AnimatedTitle
               title={languageConfig[language].PAYMENT_PAGE.CASH_ACCEPTED}

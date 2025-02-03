@@ -16,13 +16,9 @@ export default function CardPaymentMethod() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if(true){
-      setTimeout(() => setIsCardAccepted(true), 4000)
-      setTimeout(() => navigate('/service-success'), 9000)
-    }
-    
+    setTimeout(() => setIsCardAccepted(true), 4000)
+    setTimeout(() => navigate('/service-success'), 9000)
   }, [])
-
 
   return (
     <ServicePageWrapper>

@@ -12,6 +12,9 @@ export const Coin = () => {
                 <article className="middle"></article>
                 <article className="middle"></article>
                 <article className="middle"></article>
+                <article className="middle"></article>
+                <article className="middle"></article>
+                <article className="middle"></article>
                 <article className="front"></article>
             </div>
         </>

@@ -8,37 +8,44 @@
     left: calc(50% - var(--coin-size) / 2);
     position: absolute;
     transform-style: preserve-3d;
-    animation: spin 5s linear infinite;
-    perspective: 300vh;
+    animation: spin 4s linear infinite;
+    perspective: 5000px;
+    border-radius: 50%;
 }
 
 .back {
     background-image: url("/src/assets/img/zl-back.webp");
     width: var(--coin-size);
     height: var(--coin-size);
-    background-size: 96%;
+    background-size: 100%;
     background-repeat: no-repeat;
+    background-position: center;
+    transform: translateZ(calc(var(--coin-size) / 150));
 }
 
 .middle {
-    background-image: url("/src/assets/img/zl-front.webp");
+    /* background-image: url("/src/assets/img/zl-front.webp"); */
     width: var(--coin-size);
+    background: #acacac;
+    border-radius: 50%;
     height: var(--coin-size);
     background-size: 98%;
     background-repeat: no-repeat;
-    transform: translateZ(calc(var(--coin-size) / 150 + 2px));
+    background-position: center;
+    transform: translateZ(calc(var(--coin-size) / 150 + 13px));
     position: absolute;
     top: 0;
+    
 }
 
 .front {
-    background-image: url("/src/assets/img/zl-back.webp");
+    background-image: url("/src/assets/img/zl-front.webp");
     height: var(--coin-size);
-    background-size: 98%;
+    background-size: 100%;
     background-repeat: no-repeat;
     position: absolute;
     top: 0;
-    transform: calc(var(--coin-size) / 15);
+    transform: translateZ(calc(var(--coin-size) / 150 + 14px));
     width: var(--coin-size);
 }
 
@@ -47,35 +54,46 @@
 }
 
 .middle:nth-child(2) {
-    transform: translateZ(calc(var(--coin-size) / 150 + 4px));
+    transform: translateZ(calc(var(--coin-size) / 150 + 3px));
 }
 
 .middle:nth-child(3) {
-    transform: translateZ(calc(var(--coin-size) / 150 + 6px));
+    transform: translateZ(calc(var(--coin-size) / 150 + 4px));
 }
 
 .middle:nth-child(4) {
-    transform: translateZ(calc(var(--coin-size) / 150 + 8px));
+    transform: translateZ(calc(var(--coin-size) / 150 + 5px));
 }
 
 .middle:nth-child(5) {
-    transform: translateZ(calc(var(--coin-size) / 150 + 10px));
+    transform: translateZ(calc(var(--coin-size) / 150 + 6px));
 }
 
 .middle:nth-child(6) {
-    transform: translateZ(calc(var(--coin-size) / 150 + 12px));
+    transform: translateZ(calc(var(--coin-size) / 150 + 7px));
 }
 
 .middle:nth-child(7) {
-    transform: translateZ(calc(var(--coin-size) / 150 + 14px));
+    transform: translateZ(calc(var(--coin-size) / 150 + 8px));
 }
 
 .middle:nth-child(8) {
-    transform: translateZ(calc(var(--coin-size) / 150 + 16px));
+    transform: translateZ(calc(var(--coin-size) / 150 + 9px));
 }
 
 .middle:nth-child(9) {
-    transform: translateZ(calc(var(--coin-size) / 150 + 18px));
+    transform: translateZ(calc(var(--coin-size) / 150 + 10px));
+}
+.middle:nth-child(10) {
+    transform: translateZ(calc(var(--coin-size) / 150 + 11px));
+}
+
+.middle:nth-child(11) {
+    transform: translateZ(calc(var(--coin-size) / 150 + 12px));
+}
+
+.middle:nth-child(12) {
+    transform: translateZ(calc(var(--coin-size) / 150 + 13px));
 }
 
 @keyframes spin {
